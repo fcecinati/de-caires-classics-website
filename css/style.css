@@ -365,6 +365,9 @@ section { padding: var(--section) 0; }
   text-transform: uppercase;
   color: var(--grey);
 }
+.about-split__image--portrait img {
+  object-position: top center;
+}
 @media (max-width: 768px) {
   .about-split { grid-template-columns: 1fr; }
   .about-split__image { aspect-ratio: 4/3; }
