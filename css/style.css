@@ -371,6 +371,7 @@ section { padding: var(--section) 0; }
 @media (max-width: 768px) {
   .about-split { grid-template-columns: 1fr; }
   .about-split__image { aspect-ratio: 4/3; }
+  .about-split__image--portrait { aspect-ratio: 3/4; }
 }
 
 /* --- Prose -------------------------------------------------- */
