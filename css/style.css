@@ -91,10 +91,18 @@ section { padding: var(--section) 0; }
   justify-content: space-between;
 }
 .nav__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
   font-family: var(--font-display);
   font-weight: 400;
   font-size: 1.35rem;
   letter-spacing: 0.04em;
+}
+.nav__logo img {
+  height: 28px;
+  width: auto;
+  display: block;
 }
 .nav__links {
   display: flex;
