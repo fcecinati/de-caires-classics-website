@@ -453,6 +453,11 @@ section { padding: var(--section) 0; }
 }
 .image-grid--featured { grid-template-columns: 1fr; }
 .image-grid--featured img { aspect-ratio: 16/7; }
+@media (max-width: 600px) {
+  .project-meta { flex-wrap: wrap; gap: 1.5rem; }
+  .image-grid { grid-template-columns: 1fr; }
+  .image-grid--featured img { aspect-ratio: 4/3; }
+}
 
 /* --- Footer ------------------------------------------------- */
 .footer {
