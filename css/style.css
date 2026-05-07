@@ -100,7 +100,7 @@ section { padding: var(--section) 0; }
   letter-spacing: 0.04em;
 }
 .nav__logo img {
-  height: 28px;
+  height: 132px;
   width: auto;
   display: block;
 }
@@ -433,6 +433,19 @@ section { padding: var(--section) 0; }
 }
 .contact-block__whatsapp:hover { opacity: 0.7; }
 .contact-block__whatsapp svg { flex-shrink: 0; }
+.contact-block__social {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  letter-spacing: 0.02em;
+  color: var(--white);
+  margin-top: 1.5rem;
+  transition: opacity 0.25s;
+}
+.contact-block__social:hover { opacity: 0.7; }
+.contact-block__social svg { flex-shrink: 0; }
 
 /* --- WhatsApp form ------------------------------------------ */
 .wa-form { margin-top: 0; }
