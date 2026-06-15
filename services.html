@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-page="services">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,11 +17,18 @@
           <span></span><span></span><span></span>
         </button>
         <ul class="nav__links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="services.html" data-i18n="nav.services">Services</a></li>
+          <li><a href="portfolio.html" data-i18n="nav.portfolio">Portfolio</a></li>
+          <li><a href="about.html" data-i18n="nav.about">About</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+          <li class="nav__lang">
+            <div class="lang-toggle" id="lang-toggle">
+              <button class="lang-toggle__option" data-lang="en">EN</button>
+              <span class="lang-toggle__sep" aria-hidden="true">|</span>
+              <button class="lang-toggle__option" data-lang="it">IT</button>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
@@ -30,10 +37,10 @@
   <!-- Page hero -->
   <header class="page-hero">
     <div class="container">
-      <p class="eyebrow">What we do</p>
-      <h1>Services</h1>
+      <p class="eyebrow" data-i18n="services.eyebrow">What we do</p>
+      <h1 data-i18n="services.heading">Services</h1>
       <div class="divider" style="margin-top: 1.5rem;"></div>
-      <p style="max-width: 560px; color: rgba(245,240,232,0.7); margin-top: 1rem; line-height: 1.75;">
+      <p style="max-width: 560px; color: rgba(245,240,232,0.7); margin-top: 1rem; line-height: 1.75;" data-i18n="services.intro">
         Each restoration begins with a conversation. We need to understand the car's
         history, its condition, and what the owner is hoping to achieve, before any
         work begins.
@@ -48,10 +55,10 @@
         <div class="about-split__text">
           <p class="eyebrow">01</p>
           <div class="divider"></div>
-          <h2>Mechanical Restoration</h2>
+          <h2 data-i18n="services.mechanical.heading">Mechanical Restoration</h2>
           <div class="prose" style="margin-top: 1.5rem;">
-            <p>We cover the full range of mechanical work: routine maintenance and servicing, fault diagnosis and repair, engine rebuilds, gearbox rebuilds, and suspension rebuilds.</p>
-            <p>For owners who want more from their cars, we carry out tune-ups, performance upgrades, and racing modifications. Road use or track use, we set the car up for how it will actually be driven.</p>
+            <p data-i18n="services.mechanical.p1">We cover the full range of mechanical work: routine maintenance and servicing, fault diagnosis and repair, engine rebuilds, gearbox rebuilds, and suspension rebuilds.</p>
+            <p data-i18n="services.mechanical.p2">For owners who want more from their cars, we carry out tune-ups, performance upgrades, and racing modifications. Road use or track use, we set the car up for how it will actually be driven.</p>
           </div>
         </div>
         <div class="about-split__image">
@@ -71,11 +78,11 @@
         <div class="about-split__text">
           <p class="eyebrow">02</p>
           <div class="divider"></div>
-          <h2>Bodywork &amp; Paint</h2>
+          <h2 data-i18n="services.bodywork.heading">Bodywork &amp; Paint</h2>
           <div class="prose" style="margin-top: 1.5rem;">
-            <p>We strip the body to bare metal, re-preparing chassis and panels from scratch before any work builds up. Structural repairs, fabrication, and metalworking correct whatever the car needs at foundation level.</p>
-            <p>Re-chroming restores the brightwork. Body panels and accessories are refitted with care for fit and alignment.</p>
-            <p>The paintwork is the result of all that preparation. We carry out full resprays and paint repairs, matched to period colours where required. When it is done, the finish is indistinguishable from new.</p>
+            <p data-i18n="services.bodywork.p1">We strip the body to bare metal, re-preparing chassis and panels from scratch before any work builds up. Structural repairs, fabrication, and metalworking correct whatever the car needs at foundation level.</p>
+            <p data-i18n="services.bodywork.p2">Re-chroming restores the brightwork. Body panels and accessories are refitted with care for fit and alignment.</p>
+            <p data-i18n="services.bodywork.p3">The paintwork is the result of all that preparation. We carry out full resprays and paint repairs, matched to period colours where required. When it is done, the finish is indistinguishable from new.</p>
           </div>
         </div>
       </div>
@@ -89,10 +96,10 @@
         <div class="about-split__text">
           <p class="eyebrow">03</p>
           <div class="divider"></div>
-          <h2>Interior Retrimming</h2>
+          <h2 data-i18n="services.interior.heading">Interior Retrimming</h2>
           <div class="prose" style="margin-top: 1.5rem;">
-            <p>Upholstery, door cards, carpeting, headlining, and dashboard restoration. We work with period-correct materials where possible: the right leather, the right cloth, the right finish for the car and its era.</p>
-            <p>An interior tells you as much about a restoration's quality as the paint does. It is not a detail to address at the end, but a discipline in itself.</p>
+            <p data-i18n="services.interior.p1">Upholstery, door cards, carpeting, headlining, and dashboard restoration. We work with period-correct materials where possible: the right leather, the right cloth, the right finish for the car and its era.</p>
+            <p data-i18n="services.interior.p2">An interior tells you as much about a restoration's quality as the paint does. It is not a detail to address at the end, but a discipline in itself.</p>
           </div>
         </div>
         <div class="about-split__image">
@@ -112,10 +119,10 @@
         <div class="about-split__text">
           <p class="eyebrow">04</p>
           <div class="divider"></div>
-          <h2>Bespoke Projects</h2>
+          <h2 data-i18n="services.bespoke.heading">Bespoke Projects</h2>
           <div class="prose" style="margin-top: 1.5rem;">
-            <p>Custom modifications, sympathetic upgrades, one-off engineering work. We have worked on motorcycles as well as cars: custom builds, engine swaps, and modifications that require fabrication from scratch.</p>
-            <p>If you have a project that does not fit a standard category, bring it to us. The first conversation costs nothing. If we can help, we will tell you how. If we cannot, we will tell you that too.</p>
+            <p data-i18n="services.bespoke.p1">Custom modifications, sympathetic upgrades, one-off engineering work. We have worked on motorcycles as well as cars: custom builds, engine swaps, and modifications that require fabrication from scratch.</p>
+            <p data-i18n="services.bespoke.p2">If you have a project that does not fit a standard category, bring it to us. The first conversation costs nothing. If we can help, we will tell you how. If we cannot, we will tell you that too.</p>
           </div>
         </div>
       </div>
@@ -129,11 +136,11 @@
         <div class="about-split__text">
           <p class="eyebrow">05</p>
           <div class="divider"></div>
-          <h2>CAD Design &amp; 3D Printing</h2>
+          <h2 data-i18n="services.cad.heading">CAD Design &amp; 3D Printing</h2>
           <div class="prose" style="margin-top: 1.5rem;">
-            <p>Parts for classic cars go out of production. A rubber grommet, a trim clip, a bracket: components that held a car together in 1968 and have not been manufactured since. Sourcing them through specialists takes months and costs disproportionately. Sometimes they do not exist at any price.</p>
-            <p>Umberto designs replacements in CAD, working from original drawings where they exist or from physical measurement where they do not, and produces them in-house on a 3D printer. The results are tested and refined until they are right.</p>
-            <p>Small components, exactly reproduced. A problem that used to stop a restoration cold, solved.</p>
+            <p data-i18n="services.cad.p1">Parts for classic cars go out of production. A rubber grommet, a trim clip, a bracket: components that held a car together in 1968 and have not been manufactured since. Sourcing them through specialists takes months and costs disproportionately. Sometimes they do not exist at any price.</p>
+            <p data-i18n="services.cad.p2">Umberto designs replacements in CAD, working from original drawings where they exist or from physical measurement where they do not, and produces them in-house on a 3D printer. The results are tested and refined until they are right.</p>
+            <p data-i18n="services.cad.p3">Small components, exactly reproduced. A problem that used to stop a restoration cold, solved.</p>
           </div>
         </div>
         <div class="about-split__image">
@@ -147,12 +154,12 @@
   <section class="intro" style="border-top: 1px solid rgba(184,150,12,0.1);">
     <div class="container">
       <div class="divider divider--center"></div>
-      <h2>Discuss your project</h2>
-      <p class="intro__text" style="margin-top: 1.5rem;">
+      <h2 data-i18n="services.cta.heading">Discuss your project</h2>
+      <p class="intro__text" style="margin-top: 1.5rem;" data-i18n="services.cta.body">
         Consultations by appointment. Based in the Maremma, available across Tuscany and beyond.
       </p>
       <div style="text-align: center; margin-top: 2.5rem;">
-        <a href="contact.html" class="link-gold" style="justify-content: center;">Get in touch</a>
+        <a href="contact.html" class="link-gold" style="justify-content: center;" data-i18n="services.cta.link">Get in touch</a>
       </div>
     </div>
   </section>
@@ -162,16 +169,18 @@
       <div class="footer__inner">
         <span class="footer__logo">De Caires Classics</span>
         <ul class="footer__links">
-          <li><a href="services.html">Services</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="services.html" data-i18n="nav.services">Services</a></li>
+          <li><a href="portfolio.html" data-i18n="nav.portfolio">Portfolio</a></li>
+          <li><a href="about.html" data-i18n="nav.about">About</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </div>
-      <p class="footer__copy">De Caires Classics &mdash; Maremma, Tuscany &mdash; <a href="mailto:info@decairesclassics.com" style="color: inherit;">info@decairesclassics.com</a></p>
+      <p class="footer__copy" data-i18n-html="footer.copy">De Caires Classics &mdash; Maremma, Tuscany &mdash; <a href="mailto:info@decairesclassics.com" style="color: inherit;">info@decairesclassics.com</a></p>
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/i18next@23.10.0/dist/umd/i18next.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/i18n.js"></script>
 </body>
 </html>

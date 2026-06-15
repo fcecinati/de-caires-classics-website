@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-page="portfolio">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,11 +17,18 @@
           <span></span><span></span><span></span>
         </button>
         <ul class="nav__links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="services.html" data-i18n="nav.services">Services</a></li>
+          <li><a href="portfolio.html" data-i18n="nav.portfolio">Portfolio</a></li>
+          <li><a href="about.html" data-i18n="nav.about">About</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+          <li class="nav__lang">
+            <div class="lang-toggle" id="lang-toggle">
+              <button class="lang-toggle__option" data-lang="en">EN</button>
+              <span class="lang-toggle__sep" aria-hidden="true">|</span>
+              <button class="lang-toggle__option" data-lang="it">IT</button>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
@@ -29,10 +36,10 @@
 
   <header class="page-hero">
     <div class="container">
-      <p class="eyebrow">Selected work</p>
-      <h1>Portfolio</h1>
+      <p class="eyebrow" data-i18n="portfolio.eyebrow">Selected work</p>
+      <h1 data-i18n="portfolio.heading">Portfolio</h1>
       <div class="divider" style="margin-top: 1.5rem;"></div>
-      <p style="max-width: 520px; color: rgba(245,240,232,0.7); margin-top: 1rem; line-height: 1.75;">
+      <p style="max-width: 520px; color: rgba(245,240,232,0.7); margin-top: 1rem; line-height: 1.75;" data-i18n="portfolio.intro">
         Each project documented from the first assessment to the final drive.
         The process is the story.
       </p>
@@ -46,32 +53,32 @@
         <p class="eyebrow">01</p>
         <div class="divider"></div>
         <h2>912R</h2>
-        <p style="color: rgba(245,240,232,0.7); margin-top: 1rem; max-width: 640px; line-height: 1.75;">
+        <p style="color: rgba(245,240,232,0.7); margin-top: 1rem; max-width: 640px; line-height: 1.75;" data-i18n="portfolio.p912r.desc1">
           R is for Ruggine: Italian for rust. The car arrived heavily corroded and long neglected.
           The scope of the restoration expanded as the work progressed, and eventually it covered
           everything: chassis, engine, gearbox, brakes, suspension, bodywork, interior, every
           fitting and detail.
         </p>
-        <p style="color: rgba(245,240,232,0.7); margin-top: 1rem; max-width: 640px; line-height: 1.75;">
+        <p style="color: rgba(245,240,232,0.7); margin-top: 1rem; max-width: 640px; line-height: 1.75;" data-i18n="portfolio.p912r.desc2">
           The 912 has been rebuilt with fidelity to its 1960s character, with considered
           improvements to performance. The goal was not a concours reconstruction but a car
           built to be driven, perhaps better than it ever was.
         </p>
-        <p style="color: rgba(245,240,232,0.7); margin-top: 1rem; max-width: 640px; line-height: 1.75;">
+        <p style="color: rgba(245,240,232,0.7); margin-top: 1rem; max-width: 640px; line-height: 1.75;" data-i18n="portfolio.p912r.desc3">
           Work is ongoing. Expected completion: 2026.
         </p>
         <div class="project-meta">
           <div class="project-meta__item">
-            <p class="project-meta__label">Vehicle</p>
+            <p class="project-meta__label" data-i18n="portfolio.label.vehicle">Vehicle</p>
             <p class="project-meta__value">Porsche 912</p>
           </div>
           <div class="project-meta__item">
-            <p class="project-meta__label">Scope</p>
-            <p class="project-meta__value">Full Restoration</p>
+            <p class="project-meta__label" data-i18n="portfolio.label.scope">Scope</p>
+            <p class="project-meta__value" data-i18n="portfolio.scope.full">Full Restoration</p>
           </div>
           <div class="project-meta__item">
-            <p class="project-meta__label">Status</p>
-            <p class="project-meta__value" style="color: rgba(184,150,12,0.8);">In Progress</p>
+            <p class="project-meta__label" data-i18n="portfolio.label.status">Status</p>
+            <p class="project-meta__value" style="color: rgba(184,150,12,0.8);" data-i18n="portfolio.status.inprogress">In Progress</p>
           </div>
         </div>
       </div>
@@ -80,7 +87,7 @@
         <img src="images/portfolio/912R/2025/photo_2026-05-03_21-55-23.jpg" alt="Porsche 912 912R current state, 2025">
       </div>
 
-      <p class="eyebrow" style="margin-top: 2.5rem;">2019 — Arrival</p>
+      <p class="eyebrow" style="margin-top: 2.5rem;" data-i18n="portfolio.p912r.phase2019">2019 — Arrival</p>
       <div class="image-grid">
         <img src="images/portfolio/912R/2019/Photo%2009-03-2019%2C%2014%2001%2033.jpg" alt="912R on arrival, March 2019">
         <img src="images/portfolio/912R/2019/Photo%2009-03-2019%2C%2013%2040%2052.jpg" alt="912R bodywork condition on arrival, 2019">
@@ -90,7 +97,7 @@
         <img src="images/portfolio/912R/2019/Photo%2023-03-2019%2C%2013%2004%2036.jpg" alt="912R restoration work, March 2019">
       </div>
 
-      <p class="eyebrow" style="margin-top: 2.5rem;">2023 — Work in Progress</p>
+      <p class="eyebrow" style="margin-top: 2.5rem;" data-i18n="portfolio.p912r.phase2023">2023 — Work in Progress</p>
       <div class="image-grid">
         <img src="images/portfolio/912R/2023/WhatsApp%20Image%202023-03-16%20at%2014.14.46.jpeg" alt="912R bodywork progress, March 2023">
         <img src="images/portfolio/912R/2023/WhatsApp%20Image%202023-06-11%20at%2009.27.42%20%281%29.jpeg" alt="912R restoration in progress, June 2023">
@@ -99,7 +106,7 @@
         <img src="images/portfolio/912R/2023/WhatsApp%20Image%202023-06-11%20at%2009.28.33%20%286%29.jpeg" alt="912R work detail, June 2023">
       </div>
 
-      <p class="eyebrow" style="margin-top: 2.5rem;">2025 — Current</p>
+      <p class="eyebrow" style="margin-top: 2.5rem;" data-i18n="portfolio.p912r.phase2025">2025 — Current</p>
       <div class="image-grid">
         <img src="images/portfolio/912R/2025/photo_2026-05-05_21-10-28.jpg" alt="912R current state, 2025">
         <img src="images/portfolio/912R/2025/photo_2026-05-05_21-10-34.jpg" alt="912R detail, 2025">
@@ -117,23 +124,23 @@
         <p class="eyebrow">02</p>
         <div class="divider"></div>
         <h2>Harley Davidson</h2>
-        <p style="color: rgba(245,240,232,0.7); margin-top: 1rem; max-width: 640px; line-height: 1.75;">
+        <p style="color: rgba(245,240,232,0.7); margin-top: 1rem; max-width: 640px; line-height: 1.75;" data-i18n="portfolio.harley.desc">
           A homage to where it all started. Umberto began his career working on motorcycles,
           and this Harley restoration and custom build draws on those early years. The paintwork
           and detailing represent the standard we hold on every project, whatever the vehicle.
         </p>
         <div class="project-meta">
           <div class="project-meta__item">
-            <p class="project-meta__label">Vehicle</p>
+            <p class="project-meta__label" data-i18n="portfolio.label.vehicle">Vehicle</p>
             <p class="project-meta__value">Harley Davidson</p>
           </div>
           <div class="project-meta__item">
-            <p class="project-meta__label">Scope</p>
-            <p class="project-meta__value">Restoration &amp; Custom Build</p>
+            <p class="project-meta__label" data-i18n="portfolio.label.scope">Scope</p>
+            <p class="project-meta__value" data-i18n="portfolio.scope.custom">Restoration &amp; Custom Build</p>
           </div>
           <div class="project-meta__item">
-            <p class="project-meta__label">Status</p>
-            <p class="project-meta__value" style="color: var(--gold);">Completed</p>
+            <p class="project-meta__label" data-i18n="portfolio.label.status">Status</p>
+            <p class="project-meta__value" style="color: var(--gold);" data-i18n="portfolio.status.completed">Completed</p>
           </div>
         </div>
       </div>
@@ -154,17 +161,17 @@
         <p class="eyebrow">03</p>
         <div class="divider"></div>
         <h2>Jaguar E-Type 4.2</h2>
-        <p style="color: rgba(245,240,232,0.7); margin-top: 1rem; max-width: 640px; line-height: 1.75;">
+        <p style="color: rgba(245,240,232,0.7); margin-top: 1rem; max-width: 640px; line-height: 1.75;" data-i18n="portfolio.etype.desc">
           A Jaguar E-Type 4.2. Mechanical work and restoration. Full documentation to follow.
         </p>
         <div class="project-meta">
           <div class="project-meta__item">
-            <p class="project-meta__label">Vehicle</p>
+            <p class="project-meta__label" data-i18n="portfolio.label.vehicle">Vehicle</p>
             <p class="project-meta__value">Jaguar E-Type 4.2</p>
           </div>
           <div class="project-meta__item">
-            <p class="project-meta__label">Status</p>
-            <p class="project-meta__value" style="color: var(--gold);">Completed</p>
+            <p class="project-meta__label" data-i18n="portfolio.label.status">Status</p>
+            <p class="project-meta__value" style="color: var(--gold);" data-i18n="portfolio.status.completed">Completed</p>
           </div>
         </div>
       </div>
@@ -188,17 +195,17 @@
         <p class="eyebrow">04</p>
         <div class="divider"></div>
         <h2>BMW 325i</h2>
-        <p style="color: rgba(245,240,232,0.7); margin-top: 1rem; max-width: 640px; line-height: 1.75;">
+        <p style="color: rgba(245,240,232,0.7); margin-top: 1rem; max-width: 640px; line-height: 1.75;" data-i18n="portfolio.bmw.desc">
           A BMW 325i. Mechanical and service work. Full documentation to follow.
         </p>
         <div class="project-meta">
           <div class="project-meta__item">
-            <p class="project-meta__label">Vehicle</p>
+            <p class="project-meta__label" data-i18n="portfolio.label.vehicle">Vehicle</p>
             <p class="project-meta__value">BMW 325i</p>
           </div>
           <div class="project-meta__item">
-            <p class="project-meta__label">Status</p>
-            <p class="project-meta__value" style="color: var(--gold);">Completed</p>
+            <p class="project-meta__label" data-i18n="portfolio.label.status">Status</p>
+            <p class="project-meta__value" style="color: var(--gold);" data-i18n="portfolio.status.completed">Completed</p>
           </div>
         </div>
       </div>
@@ -222,17 +229,17 @@
         <p class="eyebrow">05</p>
         <div class="divider"></div>
         <h2>Lotus Cortina</h2>
-        <p style="color: rgba(245,240,232,0.7); margin-top: 1rem; max-width: 640px; line-height: 1.75;">
+        <p style="color: rgba(245,240,232,0.7); margin-top: 1rem; max-width: 640px; line-height: 1.75;" data-i18n="portfolio.cortina.desc">
           A Lotus Cortina. Documentation in preparation.
         </p>
         <div class="project-meta">
           <div class="project-meta__item">
-            <p class="project-meta__label">Vehicle</p>
+            <p class="project-meta__label" data-i18n="portfolio.label.vehicle">Vehicle</p>
             <p class="project-meta__value">Lotus Cortina</p>
           </div>
           <div class="project-meta__item">
-            <p class="project-meta__label">Status</p>
-            <p class="project-meta__value" style="color: var(--gold);">Completed</p>
+            <p class="project-meta__label" data-i18n="portfolio.label.status">Status</p>
+            <p class="project-meta__value" style="color: var(--gold);" data-i18n="portfolio.status.completed">Completed</p>
           </div>
         </div>
       </div>
@@ -255,17 +262,17 @@
         <p class="eyebrow">06</p>
         <div class="divider"></div>
         <h2>Lotus Elise</h2>
-        <p style="color: rgba(245,240,232,0.7); margin-top: 1rem; max-width: 640px; line-height: 1.75;">
+        <p style="color: rgba(245,240,232,0.7); margin-top: 1rem; max-width: 640px; line-height: 1.75;" data-i18n="portfolio.elise.desc">
           A Lotus Elise. Documentation in preparation.
         </p>
         <div class="project-meta">
           <div class="project-meta__item">
-            <p class="project-meta__label">Vehicle</p>
+            <p class="project-meta__label" data-i18n="portfolio.label.vehicle">Vehicle</p>
             <p class="project-meta__value">Lotus Elise</p>
           </div>
           <div class="project-meta__item">
-            <p class="project-meta__label">Status</p>
-            <p class="project-meta__value" style="color: var(--gold);">Completed</p>
+            <p class="project-meta__label" data-i18n="portfolio.label.status">Status</p>
+            <p class="project-meta__value" style="color: var(--gold);" data-i18n="portfolio.status.completed">Completed</p>
           </div>
         </div>
       </div>
@@ -285,17 +292,17 @@
         <p class="eyebrow">07</p>
         <div class="divider"></div>
         <h2>MGB GT</h2>
-        <p style="color: rgba(245,240,232,0.7); margin-top: 1rem; max-width: 640px; line-height: 1.75;">
+        <p style="color: rgba(245,240,232,0.7); margin-top: 1rem; max-width: 640px; line-height: 1.75;" data-i18n="portfolio.mgb.desc">
           An MGB GT. Documentation in preparation.
         </p>
         <div class="project-meta">
           <div class="project-meta__item">
-            <p class="project-meta__label">Vehicle</p>
+            <p class="project-meta__label" data-i18n="portfolio.label.vehicle">Vehicle</p>
             <p class="project-meta__value">MGB GT</p>
           </div>
           <div class="project-meta__item">
-            <p class="project-meta__label">Status</p>
-            <p class="project-meta__value" style="color: var(--gold);">Completed</p>
+            <p class="project-meta__label" data-i18n="portfolio.label.status">Status</p>
+            <p class="project-meta__value" style="color: var(--gold);" data-i18n="portfolio.status.completed">Completed</p>
           </div>
         </div>
       </div>
@@ -313,17 +320,17 @@
         <p class="eyebrow">08</p>
         <div class="divider"></div>
         <h2>Wolseley Hornet Special</h2>
-        <p style="color: rgba(245,240,232,0.7); margin-top: 1rem; max-width: 640px; line-height: 1.75;">
+        <p style="color: rgba(245,240,232,0.7); margin-top: 1rem; max-width: 640px; line-height: 1.75;" data-i18n="portfolio.wolseley.desc">
           A Wolseley Hornet Special. Documentation in preparation.
         </p>
         <div class="project-meta">
           <div class="project-meta__item">
-            <p class="project-meta__label">Vehicle</p>
+            <p class="project-meta__label" data-i18n="portfolio.label.vehicle">Vehicle</p>
             <p class="project-meta__value">Wolseley Hornet Special</p>
           </div>
           <div class="project-meta__item">
-            <p class="project-meta__label">Status</p>
-            <p class="project-meta__value" style="color: var(--gold);">Completed</p>
+            <p class="project-meta__label" data-i18n="portfolio.label.status">Status</p>
+            <p class="project-meta__value" style="color: var(--gold);" data-i18n="portfolio.status.completed">Completed</p>
           </div>
         </div>
       </div>
@@ -338,12 +345,12 @@
   <section class="intro" style="border-top: 1px solid rgba(184,150,12,0.1);">
     <div class="container">
       <div class="divider divider--center"></div>
-      <h2>Have a project in mind?</h2>
-      <p class="intro__text" style="margin-top: 1.5rem;">
+      <h2 data-i18n="portfolio.cta.heading">Have a project in mind?</h2>
+      <p class="intro__text" style="margin-top: 1.5rem;" data-i18n="portfolio.cta.body">
         The first step is a conversation. Tell us about the car.
       </p>
       <div style="text-align: center; margin-top: 2.5rem;">
-        <a href="contact.html" class="link-gold" style="justify-content: center;">Get in touch</a>
+        <a href="contact.html" class="link-gold" style="justify-content: center;" data-i18n="portfolio.cta.link">Get in touch</a>
       </div>
     </div>
   </section>
@@ -353,16 +360,18 @@
       <div class="footer__inner">
         <span class="footer__logo">De Caires Classics</span>
         <ul class="footer__links">
-          <li><a href="services.html">Services</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="services.html" data-i18n="nav.services">Services</a></li>
+          <li><a href="portfolio.html" data-i18n="nav.portfolio">Portfolio</a></li>
+          <li><a href="about.html" data-i18n="nav.about">About</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </div>
-      <p class="footer__copy">De Caires Classics &mdash; Maremma, Tuscany &mdash; <a href="mailto:info@decairesclassics.com" style="color: inherit;">info@decairesclassics.com</a></p>
+      <p class="footer__copy" data-i18n-html="footer.copy">De Caires Classics &mdash; Maremma, Tuscany &mdash; <a href="mailto:info@decairesclassics.com" style="color: inherit;">info@decairesclassics.com</a></p>
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/i18next@23.10.0/dist/umd/i18next.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/i18n.js"></script>
 </body>
 </html>

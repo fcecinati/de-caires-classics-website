@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-page="about">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,11 +17,18 @@
           <span></span><span></span><span></span>
         </button>
         <ul class="nav__links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="services.html" data-i18n="nav.services">Services</a></li>
+          <li><a href="portfolio.html" data-i18n="nav.portfolio">Portfolio</a></li>
+          <li><a href="about.html" data-i18n="nav.about">About</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+          <li class="nav__lang">
+            <div class="lang-toggle" id="lang-toggle">
+              <button class="lang-toggle__option" data-lang="en">EN</button>
+              <span class="lang-toggle__sep" aria-hidden="true">|</span>
+              <button class="lang-toggle__option" data-lang="it">IT</button>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
@@ -29,8 +36,8 @@
 
   <header class="page-hero">
     <div class="container">
-      <p class="eyebrow">The studio</p>
-      <h1>Umberto De Caires</h1>
+      <p class="eyebrow" data-i18n="about.eyebrow">The studio</p>
+      <h1 data-i18n="about.heading">Umberto De Caires</h1>
       <div class="divider" style="margin-top: 1.5rem;"></div>
     </div>
   </header>
@@ -44,10 +51,10 @@
         </div>
         <div class="about-split__text">
           <div class="prose">
-            <p>Umberto De Caires grew up in his father's workshop. His father, an aerospace engineer with a precise mind and hands that could build anything, brought him into projects from an early age. Scale models, engines, mechanisms. The habit of taking things apart and understanding them properly formed early.</p>
-            <p>He trained as a mechanic in Venezuela, through a course focused on racing, where tolerances matter and shortcuts cost races. He moved into custom motorbike work, then to Italy for bodywork and paintwork. Each discipline added a layer: engine, chassis, surface, finish.</p>
-            <p>Bristol came next. Years working on classic vehicles: Jaguars above all, but also Porsche, Alfa Romeo, Maserati, Triumph, MG, Aston Martin. Working independently, for people who cared about what they drove.</p>
-            <p>De Caires Classics is now based in the Maremma, Tuscany. The same approach. A longer list of experience behind it.</p>
+            <p data-i18n="about.p1">Umberto De Caires grew up in his father's workshop. His father, an aerospace engineer with a precise mind and hands that could build anything, brought him into projects from an early age. Scale models, engines, mechanisms. The habit of taking things apart and understanding them properly formed early.</p>
+            <p data-i18n="about.p2">He trained as a mechanic in Venezuela, through a course focused on racing, where tolerances matter and shortcuts cost races. He moved into custom motorbike work, then to Italy for bodywork and paintwork. Each discipline added a layer: engine, chassis, surface, finish.</p>
+            <p data-i18n="about.p3">Bristol came next. Years working on classic vehicles: Jaguars above all, but also Porsche, Alfa Romeo, Maserati, Triumph, MG, Aston Martin. Working independently, for people who cared about what they drove.</p>
+            <p data-i18n="about.p4">De Caires Classics is now based in the Maremma, Tuscany. The same approach. A longer list of experience behind it.</p>
           </div>
         </div>
       </div>
@@ -58,30 +65,30 @@
   <section style="border-top: 1px solid rgba(184,150,12,0.1);">
     <div class="container">
       <div class="section-header">
-        <p class="eyebrow">Experience</p>
+        <p class="eyebrow" data-i18n="about.exp.eyebrow">Experience</p>
         <div class="divider"></div>
-        <h2>Marques worked on</h2>
+        <h2 data-i18n="about.exp.heading">Marques worked on</h2>
       </div>
       <div class="services-grid">
         <div class="service-card">
           <div class="service-card__line"></div>
-          <h3>British Classics</h3>
-          <p>Jaguar, Triumph, MG, Aston Martin, Land Rover. Particular depth of experience with Jaguar: XK, E-Type, XJ, and Mk series.</p>
+          <h3 data-i18n="about.british.title">British Classics</h3>
+          <p data-i18n="about.british.body">Jaguar, Triumph, MG, Aston Martin, Land Rover. Particular depth of experience with Jaguar: XK, E-Type, XJ, and Mk series.</p>
         </div>
         <div class="service-card">
           <div class="service-card__line"></div>
-          <h3>Italian Classics</h3>
-          <p>Alfa Romeo, Fiat, Maserati, Lancia. Cars that reward careful work with a character no modern vehicle replicates.</p>
+          <h3 data-i18n="about.italian.title">Italian Classics</h3>
+          <p data-i18n="about.italian.body">Alfa Romeo, Fiat, Maserati, Lancia. Cars that reward careful work with a character no modern vehicle replicates.</p>
         </div>
         <div class="service-card">
           <div class="service-card__line"></div>
-          <h3>European &amp; Other</h3>
-          <p>Porsche, Mercedes, and others. The approach is the same regardless of nationality: understand the car, work to its standard, not beneath it.</p>
+          <h3 data-i18n="about.european.title">European &amp; Other</h3>
+          <p data-i18n="about.european.body">Porsche, Mercedes, and others. The approach is the same regardless of nationality: understand the car, work to its standard, not beneath it.</p>
         </div>
         <div class="service-card">
           <div class="service-card__line"></div>
-          <h3>Motorcycles</h3>
-          <p>Custom builds and modifications. Mechanical and cosmetic work. A different discipline. The same attention to detail.</p>
+          <h3 data-i18n="about.motorcycles.title">Motorcycles</h3>
+          <p data-i18n="about.motorcycles.body">Custom builds and modifications. Mechanical and cosmetic work. A different discipline. The same attention to detail.</p>
         </div>
       </div>
     </div>
@@ -90,13 +97,13 @@
   <!-- Philosophy -->
   <section style="border-top: 1px solid rgba(184,150,12,0.1);">
     <div class="container" style="max-width: 760px;">
-      <p class="eyebrow">Philosophy</p>
+      <p class="eyebrow" data-i18n="about.philo.eyebrow">Philosophy</p>
       <div class="divider"></div>
-      <h2 style="margin-bottom: 2rem;">How we work</h2>
+      <h2 style="margin-bottom: 2rem;" data-i18n="about.philo.heading">How we work</h2>
       <div class="prose">
-        <p>Every restoration begins with a conversation. Before any work starts, we need to understand the car: its history, its condition, what it has been through, and what the owner hopes to achieve. That conversation shapes everything that follows.</p>
-        <p>We do not promise timelines we cannot keep, or quote prices without understanding the scope. A car that looks presentable may be concealing significant structural work. We assess honestly and report honestly. The conversation after the assessment is as important as the assessment itself.</p>
-        <p>The work is done to a standard we would accept on our own vehicles. That is the only measure that makes sense.</p>
+        <p data-i18n="about.philo.p1">Every restoration begins with a conversation. Before any work starts, we need to understand the car: its history, its condition, what it has been through, and what the owner hopes to achieve. That conversation shapes everything that follows.</p>
+        <p data-i18n="about.philo.p2">We do not promise timelines we cannot keep, or quote prices without understanding the scope. A car that looks presentable may be concealing significant structural work. We assess honestly and report honestly. The conversation after the assessment is as important as the assessment itself.</p>
+        <p data-i18n="about.philo.p3">The work is done to a standard we would accept on our own vehicles. That is the only measure that makes sense.</p>
       </div>
     </div>
   </section>
@@ -105,12 +112,12 @@
   <section class="intro" style="border-top: 1px solid rgba(184,150,12,0.1);">
     <div class="container">
       <div class="divider divider--center"></div>
-      <h2>Consultations by appointment.</h2>
-      <p class="intro__text" style="margin-top: 1.5rem;">
+      <h2 data-i18n="about.cta.heading">Consultations by appointment.</h2>
+      <p class="intro__text" style="margin-top: 1.5rem;" data-i18n="about.cta.body">
         Based in the Maremma. Available across Tuscany and beyond.
       </p>
       <div style="text-align: center; margin-top: 2.5rem;">
-        <a href="contact.html" class="link-gold" style="justify-content: center;">Get in touch</a>
+        <a href="contact.html" class="link-gold" style="justify-content: center;" data-i18n="about.cta.link">Get in touch</a>
       </div>
     </div>
   </section>
@@ -120,16 +127,18 @@
       <div class="footer__inner">
         <span class="footer__logo">De Caires Classics</span>
         <ul class="footer__links">
-          <li><a href="services.html">Services</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="services.html" data-i18n="nav.services">Services</a></li>
+          <li><a href="portfolio.html" data-i18n="nav.portfolio">Portfolio</a></li>
+          <li><a href="about.html" data-i18n="nav.about">About</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </div>
-      <p class="footer__copy">De Caires Classics &mdash; Maremma, Tuscany &mdash; <a href="mailto:info@decairesclassics.com" style="color: inherit;">info@decairesclassics.com</a></p>
+      <p class="footer__copy" data-i18n-html="footer.copy">De Caires Classics &mdash; Maremma, Tuscany &mdash; <a href="mailto:info@decairesclassics.com" style="color: inherit;">info@decairesclassics.com</a></p>
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/i18next@23.10.0/dist/umd/i18next.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/i18n.js"></script>
 </body>
 </html>

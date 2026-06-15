@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-page="home">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,11 +19,18 @@
           <span></span><span></span><span></span>
         </button>
         <ul class="nav__links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="services.html" data-i18n="nav.services">Services</a></li>
+          <li><a href="portfolio.html" data-i18n="nav.portfolio">Portfolio</a></li>
+          <li><a href="about.html" data-i18n="nav.about">About</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+          <li class="nav__lang">
+            <div class="lang-toggle" id="lang-toggle">
+              <button class="lang-toggle__option" data-lang="en">EN</button>
+              <span class="lang-toggle__sep" aria-hidden="true">|</span>
+              <button class="lang-toggle__option" data-lang="it">IT</button>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
@@ -40,16 +47,16 @@
         alt="De Caires Classics"
         class="hero__logo"
       >
-      <p class="hero__tagline">Every car has a story. We make sure it continues.</p>
+      <p class="hero__tagline" data-i18n="home.tagline">Every car has a story. We make sure it continues.</p>
     </div>
-    <div class="hero__scroll" aria-hidden="true">Scroll</div>
+    <div class="hero__scroll" aria-hidden="true" data-i18n="home.scroll">Scroll</div>
   </section>
 
   <!-- Intro -->
   <section class="intro">
     <div class="container">
       <div class="divider divider--center"></div>
-      <p class="intro__text">
+      <p class="intro__text" data-i18n="home.intro">
         De Caires Classics is a restoration studio based in the Maremma, Tuscany.
         We work on classic cars of all origins: complete mechanical rebuilds,
         bodywork, interior retrimming, and bespoke engineering.
@@ -62,38 +69,38 @@
   <section>
     <div class="container">
       <div class="section-header">
-        <p class="eyebrow">What we do</p>
+        <p class="eyebrow" data-i18n="home.services.eyebrow">What we do</p>
         <div class="divider"></div>
-        <h2>Services</h2>
+        <h2 data-i18n="home.services.heading">Services</h2>
       </div>
       <div class="services-grid">
         <div class="service-card">
           <div class="service-card__line"></div>
-          <h3>Mechanical Restoration</h3>
-          <p>Engine rebuilds, gearboxes, brakes, suspension, electrical systems. Every component inspected. Rebuilt or replaced where necessary.</p>
+          <h3 data-i18n="home.service.mechanical.title">Mechanical Restoration</h3>
+          <p data-i18n="home.service.mechanical.body">Engine rebuilds, gearboxes, brakes, suspension, electrical systems. Every component inspected. Rebuilt or replaced where necessary.</p>
         </div>
         <div class="service-card">
           <div class="service-card__line"></div>
-          <h3>Bodywork &amp; Paint</h3>
-          <p>Panel repair, rust treatment, preparation and paint matching. The correct colour, applied correctly. Not approximated.</p>
+          <h3 data-i18n="home.service.bodywork.title">Bodywork &amp; Paint</h3>
+          <p data-i18n="home.service.bodywork.body">Panel repair, rust treatment, preparation and paint matching. The correct colour, applied correctly. Not approximated.</p>
         </div>
         <div class="service-card">
           <div class="service-card__line"></div>
-          <h3>Interior Retrimming</h3>
-          <p>Upholstery, door cards, carpeting, dashboard restoration. Period-correct materials where possible. No shortcuts on the finishing.</p>
+          <h3 data-i18n="home.service.interior.title">Interior Retrimming</h3>
+          <p data-i18n="home.service.interior.body">Upholstery, door cards, carpeting, dashboard restoration. Period-correct materials where possible. No shortcuts on the finishing.</p>
         </div>
         <div class="service-card">
           <div class="service-card__line"></div>
-          <h3>Bespoke Projects</h3>
-          <p>Custom modifications, sympathetic upgrades, one-off engineering work. If you have a specific project in mind, the first step is a conversation.</p>
+          <h3 data-i18n="home.service.bespoke.title">Bespoke Projects</h3>
+          <p data-i18n="home.service.bespoke.body">Custom modifications, sympathetic upgrades, one-off engineering work. If you have a specific project in mind, the first step is a conversation.</p>
         </div>
         <div class="service-card">
           <div class="service-card__line"></div>
-          <h3>CAD Design &amp; 3D Printing</h3>
-          <p>Parts that went out of production decades ago, reproduced in-house. Exact measurements, tested and refined until they are right.</p>
+          <h3 data-i18n="home.service.cad.title">CAD Design &amp; 3D Printing</h3>
+          <p data-i18n="home.service.cad.body">Parts that went out of production decades ago, reproduced in-house. Exact measurements, tested and refined until they are right.</p>
         </div>
       </div>
-      <a href="services.html" class="link-gold">Full services</a>
+      <a href="services.html" class="link-gold" data-i18n="home.services.link">Full services</a>
     </div>
   </section>
 
@@ -101,34 +108,34 @@
   <section>
     <div class="container">
       <div class="section-header">
-        <p class="eyebrow">Selected work</p>
+        <p class="eyebrow" data-i18n="home.portfolio.eyebrow">Selected work</p>
         <div class="divider"></div>
-        <h2>Portfolio</h2>
+        <h2 data-i18n="home.portfolio.heading">Portfolio</h2>
       </div>
       <div class="portfolio-grid">
         <a href="portfolio.html" class="portfolio-card">
           <img src="images/portfolio/912R/2025/photo_2026-05-03_21-55-23.jpg" alt="Porsche 912 restoration in progress">
           <div class="portfolio-card__overlay">
-            <p class="portfolio-card__tag">In Progress</p>
+            <p class="portfolio-card__tag" data-i18n="home.portfolio.tag.inprogress">In Progress</p>
             <p class="portfolio-card__title">Porsche 912</p>
           </div>
         </a>
         <a href="portfolio.html" class="portfolio-card">
           <img src="images/portfolio/Harley/thumb-1920-857487.jpg" alt="Harley Davidson custom build">
           <div class="portfolio-card__overlay">
-            <p class="portfolio-card__tag">Custom Build</p>
+            <p class="portfolio-card__tag" data-i18n="home.portfolio.tag.custom">Custom Build</p>
             <p class="portfolio-card__title">Harley Davidson</p>
           </div>
         </a>
         <a href="portfolio.html" class="portfolio-card">
           <img src="images/portfolio/E-Type%204.2%202023-04/1%20-%20WhatsApp%20Image%202023-04-23%20at%2015.56.05.jpeg" alt="Jaguar E-Type 4.2 restoration">
           <div class="portfolio-card__overlay">
-            <p class="portfolio-card__tag">Restoration</p>
+            <p class="portfolio-card__tag" data-i18n="home.portfolio.tag.restoration">Restoration</p>
             <p class="portfolio-card__title">Jaguar E-Type 4.2</p>
           </div>
         </a>
       </div>
-      <a href="portfolio.html" class="link-gold">View all work</a>
+      <a href="portfolio.html" class="link-gold" data-i18n="home.portfolio.link">View all work</a>
     </div>
   </section>
 
@@ -140,14 +147,14 @@
           <img src="images/portrait.jpeg" alt="Umberto De Caires">
         </div>
         <div class="about-split__text">
-          <p class="eyebrow">About</p>
+          <p class="eyebrow" data-i18n="home.about.eyebrow">About</p>
           <div class="divider"></div>
-          <h2>Umberto De Caires</h2>
+          <h2 data-i18n="home.about.heading">Umberto De Caires</h2>
           <div class="prose" style="margin-top: 1.5rem;">
-            <p>Trained in Venezuela on racing mechanics. Bodywork and paint in Italy. Years on British classics in Bristol: Jaguars above all, but also Porsche, Alfa Romeo, Maserati, Triumph, MG, Aston Martin.</p>
-            <p>Now based in the Maremma. The same attention to detail. A longer list of experience behind it.</p>
+            <p data-i18n="home.about.p1">Trained in Venezuela on racing mechanics. Bodywork and paint in Italy. Years on British classics in Bristol: Jaguars above all, but also Porsche, Alfa Romeo, Maserati, Triumph, MG, Aston Martin.</p>
+            <p data-i18n="home.about.p2">Now based in the Maremma. The same attention to detail. A longer list of experience behind it.</p>
           </div>
-          <a href="about.html" class="link-gold">Full story</a>
+          <a href="about.html" class="link-gold" data-i18n="home.about.link">Full story</a>
         </div>
       </div>
     </div>
@@ -157,13 +164,13 @@
   <section class="intro">
     <div class="container">
       <div class="divider divider--center"></div>
-      <h2>Start with a conversation.</h2>
-      <p class="intro__text" style="margin-top: 1.5rem;">
+      <h2 data-i18n="home.cta.heading">Start with a conversation.</h2>
+      <p class="intro__text" style="margin-top: 1.5rem;" data-i18n="home.cta.body">
         Every restoration begins the same way. Tell us about the car,
         its history, and what you have in mind.
       </p>
       <div style="text-align: center; margin-top: 2.5rem;">
-        <a href="contact.html" class="link-gold" style="justify-content: center;">Get in touch</a>
+        <a href="contact.html" class="link-gold" style="justify-content: center;" data-i18n="home.cta.link">Get in touch</a>
       </div>
     </div>
   </section>
@@ -174,16 +181,18 @@
       <div class="footer__inner">
         <span class="footer__logo">De Caires Classics</span>
         <ul class="footer__links">
-          <li><a href="services.html">Services</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="services.html" data-i18n="nav.services">Services</a></li>
+          <li><a href="portfolio.html" data-i18n="nav.portfolio">Portfolio</a></li>
+          <li><a href="about.html" data-i18n="nav.about">About</a></li>
+          <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </div>
-      <p class="footer__copy">De Caires Classics &mdash; Maremma, Tuscany &mdash; <a href="mailto:info@decairesclassics.com" style="color: inherit;">info@decairesclassics.com</a></p>
+      <p class="footer__copy" data-i18n-html="footer.copy">De Caires Classics &mdash; Maremma, Tuscany &mdash; <a href="mailto:info@decairesclassics.com" style="color: inherit;">info@decairesclassics.com</a></p>
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/i18next@23.10.0/dist/umd/i18next.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/i18n.js"></script>
 </body>
 </html>
