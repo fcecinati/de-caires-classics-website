@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>912R: A 1965 Porsche 912, Restored | De Caires Classics</title>
+<meta name="description" content="The full restoration of 912R, a 1965 Porsche 912, told and dissected system by system. De Caires Classics, Maremma, Tuscany.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     912R Restoration Brochure
+     A light, discursive, print-friendly dossier.
+     Self-contained: no external CSS or JS required.
+     ============================================================ */
+
+  :root {
+    --paper:    #FBF8F1;
+    --paper-2:  #F3ECDE;
+    --ink:      #211D17;
+    --ink-soft: #5C554A;
+    --gold:     #A9820A;
+    --rule:     #D8CDB6;
+    --display: 'Cormorant Garamond', Georgia, serif;
+    --body:    'DM Sans', system-ui, sans-serif;
+    --measure: 36rem;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 16px; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-weight: 400;
+    line-height: 1.72;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  img { display: block; max-width: 100%; height: auto; }
+
+  .sheet {
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: clamp(2rem, 6vw, 5rem) clamp(1.5rem, 6vw, 4.5rem) 5rem;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--display);
+    font-weight: 300;
+    line-height: 1.12;
+    letter-spacing: 0.01em;
+  }
+
+  .eyebrow {
+    font-family: var(--body);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  p { font-size: 1.05rem; }
+  p + p { margin-top: 1.1rem; }
+  .prose { max-width: var(--measure); }
+  .prose h4 {
+    font-size: 1.5rem;
+    margin: 2rem 0 0.6rem;
+  }
+
+  .lead {
+    font-family: var(--display);
+    font-size: clamp(1.25rem, 2.4vw, 1.55rem);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    max-width: var(--measure);
+  }
+
+  .rule {
+    width: 3rem; height: 1px; background: var(--gold); border: 0;
+    margin: 1.5rem 0;
+  }
+  .rule--center { margin-left: auto; margin-right: auto; }
+
+  .dropcap::first-letter {
+    font-family: var(--display);
+    font-weight: 500;
+    float: left;
+    font-size: 3.6rem;
+    line-height: 0.78;
+    padding: 0.15rem 0.6rem 0 0;
+    color: var(--gold);
+  }
+
+  /* --- Cover ------------------------------------------------- */
+  .cover {
+    min-height: 94vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 0;
+  }
+  .cover__marque {
+    font-family: var(--body);
+    font-size: 0.8rem; letter-spacing: 0.35em; text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-top: 2rem;
+  }
+  .cover__title {
+    font-size: clamp(3.4rem, 12vw, 7rem);
+    font-weight: 300; margin: 1rem 0 0.4rem; letter-spacing: 0.02em;
+  }
+  .cover__sub {
+    font-family: var(--display); font-style: italic;
+    font-size: clamp(1.2rem, 3vw, 1.7rem); color: var(--ink-soft);
+  }
+  .cover__hero { flex: 1; display: flex; margin: 2.5rem 0; }
+  .cover__foot {
+    font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink-soft); padding-bottom: 1rem;
+  }
+
+  /* --- Section ---------------------------------------------- */
+  .section { margin-top: 4.5rem; }
+  .section__head { margin-bottom: 1.6rem; }
+  .section__title { font-size: clamp(1.9rem, 4.5vw, 2.9rem); margin-top: 0.5rem; }
+  .section__standfirst {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--ink-soft);
+    max-width: var(--measure);
+    margin-top: 0.8rem;
+  }
+
+  /* --- Quotes ----------------------------------------------- */
+  .quote {
+    max-width: var(--measure); margin: 2.4rem 0;
+    padding-left: 1.6rem; border-left: 2px solid var(--gold);
+  }
+  .quote p {
+    font-family: var(--display); font-style: italic; font-weight: 400;
+    font-size: clamp(1.35rem, 3vw, 1.7rem); line-height: 1.4; color: var(--ink);
+  }
+  .quote cite {
+    display: block; margin-top: 0.7rem;
+    font-family: var(--body); font-style: normal; font-size: 0.75rem;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft);
+  }
+
+  /* --- Detail bullet lists ---------------------------------- */
+  .details { max-width: var(--measure); margin: 1.4rem 0; list-style: none; }
+  .details li {
+    position: relative; padding-left: 1.4rem; margin: 0.55rem 0;
+    font-size: 1rem;
+  }
+  .details li::before {
+    content: ""; position: absolute; left: 0; top: 0.62em;
+    width: 0.4rem; height: 0.4rem; background: var(--gold); border-radius: 50%;
+  }
+  .details li strong { font-weight: 500; }
+
+  /* --- Spec tables ------------------------------------------ */
+  .spec-table {
+    width: 100%; max-width: var(--measure);
+    border-collapse: collapse; margin: 1.6rem 0;
+    font-size: 0.95rem;
+  }
+  .spec-table caption {
+    text-align: left; font-family: var(--display); font-size: 1.4rem;
+    color: var(--ink); margin-bottom: 0.6rem; caption-side: top;
+  }
+  .spec-table th, .spec-table td {
+    text-align: left; vertical-align: top;
+    padding: 0.6rem 0.9rem 0.6rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .spec-table th {
+    font-weight: 500; color: var(--ink-soft); width: 11rem;
+    padding-right: 1.2rem;
+  }
+  .spec-table td { color: var(--ink); }
+  .spec-table--wide th { width: 9rem; }
+
+  /* status tags */
+  .tag {
+    display: inline-block; font-size: 0.66rem; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 0.12rem 0.5rem; border-radius: 1rem; margin-left: 0.4rem;
+    vertical-align: 0.08em; white-space: nowrap;
+  }
+  .tag--new     { background: #EAD9A6; color: #6B4E05; }
+  .tag--uprated { background: #E7DFcf; color: #5C554A; }
+  .tag--kept    { background: transparent; color: var(--ink-soft); border: 1px solid var(--rule); }
+
+  @media (max-width: 34rem) {
+    .spec-table, .spec-table tbody, .spec-table tr, .spec-table th, .spec-table td { display: block; width: 100%; }
+    .spec-table th { border: 0; padding-bottom: 0.1rem; }
+    .spec-table td { padding-top: 0; padding-bottom: 0.8rem; }
+  }
+
+  /* --- Panel / callout box ---------------------------------- */
+  .callout {
+    max-width: var(--measure); margin: 1.8rem 0;
+    background: var(--paper-2); border: 1px solid var(--rule);
+    padding: 1.4rem 1.6rem;
+  }
+  .callout h4 {
+    font-size: 1.25rem; margin-bottom: 0.5rem;
+  }
+  .callout p { font-size: 0.98rem; }
+
+  .tbc { font-style: italic; color: var(--gold); }
+
+  /* --- Image plates ----------------------------------------- */
+  figure { margin: 2.2rem 0; max-width: var(--measure); }
+  .plate {
+    position: relative;
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+    aspect-ratio: 3 / 2;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 1.6rem;
+    color: var(--ink-soft);
+    font-family: var(--display); font-style: italic; font-size: 1.05rem;
+  }
+  .plate--tall { aspect-ratio: 3 / 4; }
+  .plate__type {
+    position: absolute; top: 0.7rem; left: 0.7rem;
+    font-family: var(--body); font-style: normal;
+    font-size: 0.6rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 0.2rem 0.55rem; border-radius: 1rem;
+  }
+  .plate--finished .plate__type { background: #EAD9A6; color: #6B4E05; }
+  .plate--historic .plate__type { background: #D8CDB6; color: #4a4438; }
+  figcaption { margin-top: 0.7rem; font-size: 0.82rem; color: var(--ink-soft); font-style: italic; }
+
+  .figrow {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;
+    max-width: var(--measure); margin: 2.2rem 0;
+  }
+  .figrow figure { margin: 0; }
+  .figrow .plate { aspect-ratio: 1 / 1; font-size: 0.9rem; }
+  @media (max-width: 30rem) { .figrow { grid-template-columns: 1fr; } }
+
+  /* --- Foreword / contents ---------------------------------- */
+  .foreword { margin-top: 3rem; }
+  .contents { max-width: var(--measure); margin-top: 2.5rem; }
+  .contents h3 { font-size: 1.4rem; margin-bottom: 1rem; }
+  .contents ol { list-style: none; counter-reset: toc; }
+  .contents li {
+    counter-increment: toc;
+    display: flex; align-items: baseline; gap: 0.8rem;
+    padding: 0.4rem 0; border-bottom: 1px solid var(--rule);
+    font-size: 0.98rem;
+  }
+  .contents li::before {
+    content: counter(toc, decimal-leading-zero);
+    font-family: var(--body); font-size: 0.75rem; color: var(--gold);
+    letter-spacing: 0.1em; min-width: 1.8rem;
+  }
+
+  /* --- Closing ---------------------------------------------- */
+  .closing { margin-top: 5rem; text-align: center; }
+  .closing .rule { margin: 2rem auto; }
+  .colophon {
+    margin-top: 1.5rem; font-size: 0.78rem; letter-spacing: 0.05em;
+    color: var(--ink-soft); line-height: 1.7;
+  }
+
+  /* ============================================================
+     PRINT
+     ============================================================ */
+  @page { size: A4; margin: 18mm 16mm; }
+  @media print {
+    :root { --paper: #FFFFFF; --paper-2: #FAF6EC; }
+    body { font-size: 10.5pt; line-height: 1.55; }
+    .sheet { max-width: none; padding: 0; }
+    .cover { min-height: calc(100vh - 36mm); page-break-after: always; }
+    .section { page-break-before: always; margin-top: 0; padding-top: 0.4rem; }
+    .section--flow { page-break-before: auto; }
+    .quote, .callout, figure, .figrow, .closing, .contents { page-break-inside: avoid; }
+    .spec-table { page-break-inside: auto; }
+    .spec-table tr { page-break-inside: avoid; }
+    .plate { border: 1px solid #ccc; min-height: 4cm; }
+    a { color: inherit; text-decoration: none; }
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <!-- ============ 1. COVER ============ -->
+  <header class="cover">
+    <p class="cover__marque">Porsche &middot; 912 &middot; 1965</p>
+    <h1 class="cover__title">912R</h1>
+    <p class="cover__sub">A restoration, dissected</p>
+    <div class="cover__hero">
+      <div class="plate plate--finished" style="width:100%; aspect-ratio:16/10;">
+        <span class="plate__type">Finished &middot; professional</span>
+        Cover hero: the finished car, front three-quarter, low evening light
+      </div>
+    </div>
+    <p class="cover__foot">De Caires Classics &middot; Maremma, Tuscany</p>
+  </header>
+
+  <!-- ============ 2. FOREWORD + CONTENTS ============ -->
+  <section class="section section--flow">
+    <div class="section__head">
+      <p class="eyebrow">Foreword</p>
+      <h2 class="section__title">A car worth explaining</h2>
+    </div>
+    <div class="prose">
+      <p class="lead">This is the complete account of a single restoration: what the car was, what was found inside it, and every decision taken to bring it back. It is written to be read from the first page, and kept as a record of the work.</p>
+      <p style="margin-top:1.4rem;">Some cars are simply serviced and sold. This was not one of them. What began as a fair deal on a rough but promising 912 became a near-total rebuild, most of it carried out by one pair of hands. The pages that follow tell that story in order, and then take the car apart system by system so that nothing is left unsaid. Where a fact is still to be confirmed from the car's documents, it is marked <span class="tbc">to confirm</span> rather than guessed.</p>
+    </div>
+
+    <div class="contents">
+      <h3>What follows</h3>
+      <ol>
+        <li>Why a 912</li>
+        <li>As found</li>
+        <li>Body and structure</li>
+        <li>Colour</li>
+        <li>The engine</li>
+        <li>Cooling, fuelling and exhaust</li>
+        <li>Running gear</li>
+        <li>Wheels and tyres</li>
+        <li>Interior</li>
+        <li>Glass, mirrors and rubbers</li>
+        <li>Lights</li>
+        <li>Electrics</li>
+        <li>The engine bay, finished</li>
+        <li>Character and faithfulness</li>
+        <li>The hardest parts</li>
+        <li>Full specification</li>
+        <li>For the next owner</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ 3. WHY A 912 ============ -->
+  <section class="section">
+    <div class="section__head">
+      <p class="eyebrow">01 &middot; The car</p>
+      <h2 class="section__title">Why a 912</h2>
+      <p class="section__standfirst">The badge first, the bargain second, and a rebuild no one had bargained for.</p>
+    </div>
+    <div class="prose">
+      <p class="dropcap">It began with the badge. A love of the Porsche marque, and a 912 that came up at a good price: on paper, a good deal. The car did not look bad from the outside. It was only later, once it was stripped, that the true size of the job revealed itself, and a fair deal turned into a very large one.</p>
+
+      <p>The 912 was Porsche's more attainable car, built so that a driver who could not stretch to a 911 could still stay with the marque. It ran from 1965 to 1968, with a final fuel-injected 912E in 1969, after which the model was dropped and the factory's attention went wholly to the 911. That short life is why the car is rare today.</p>
+
+      <p>Mechanically it shares the 911's floorpan and body; the interior is much the same too. The difference is behind the rear axle, where a flat-four sits in place of the flat-six. Less weight hung out at the back changes the whole feel of the car. It is not as fast as a 911. To the people who drive them, it handles better for exactly that reason: a different sensation from the same car.</p>
+    </div>
+
+    <table class="spec-table">
+      <caption>The 912 in context</caption>
+      <tbody>
+        <tr><th>Built</th><td>1965 to 1968 (912E in 1969)</td></tr>
+        <tr><th>Place in the range</th><td>The affordable Porsche, sold below the 911</td></tr>
+        <tr><th>Shared with 911</th><td>Chassis, body and much of the interior</td></tr>
+        <tr><th>Engine</th><td>Air-cooled flat four, in place of the 911's flat six</td></tr>
+        <tr><th>The trade</th><td>Less power, less weight over the rear, sharper balance</td></tr>
+      </tbody>
+    </table>
+
+    <blockquote class="quote">
+      <p>I always loved the Porsche brand. The 912 handles completely differently, less weight in the back. It is a different feeling of the same car.</p>
+      <cite>Umberto</cite>
+    </blockquote>
+
+    <div class="figrow">
+      <figure>
+        <div class="plate plate--historic"><span class="plate__type">Original / period</span>The car as bought, before work</div>
+      </figure>
+      <figure>
+        <div class="plate plate--finished"><span class="plate__type">Finished</span>The Porsche badge, restored</div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ 4. AS FOUND ============ -->
+  <section class="section">
+    <div class="section__head">
+      <p class="eyebrow">02 &middot; Condition on arrival</p>
+      <h2 class="section__title">What the carpets were hiding</h2>
+      <p class="section__standfirst">Sound to the eye, and almost gone beneath.</p>
+    </div>
+    <div class="prose">
+      <p>The car flattered to deceive. The interior was in place, carpets and all, and the underside had been painted, so at a glance it looked like a manageable project. That impression lasted precisely as long as it took to start taking things out.</p>
+      <p>Underneath, the shell had rusted down. Roughly the lower half of the car would have to be remade. It was, honestly, a job large enough that at one point the reasonable option was to sell the project on rather than see it through. It was kept. The compensation, beyond the finished car, was a deep and lasting understanding of how these bodies are built, knowledge that carries straight across to the 911, since the two share the same structure.</p>
+    </div>
+
+    <ul class="details">
+      <li><strong>Presented well:</strong> trimmed interior in place, underside painted, no obvious alarm from outside.</li>
+      <li><strong>Reality once stripped:</strong> corrosion through roughly the bottom half of the shell.</li>
+      <li><strong>Upper body:</strong> largely sound and saved.</li>
+      <li><strong>Lower body:</strong> substantially gone, requiring fabrication rather than repair.</li>
+      <li><strong>Engine:</strong> seized, with a failed piston (covered in full later).</li>
+      <li><strong>Air ducting:</strong> many of the cooling tin panels that direct air over the engine were missing.</li>
+      <li><strong>Wiring:</strong> the original loom found burnt through.</li>
+    </ul>
+
+    <blockquote class="quote">
+      <p>The car outside didn't look that bad. But when I started taking things out, I found what they were hiding. It was really bad.</p>
+      <cite>Umberto</cite>
+    </blockquote>
+
+    <div class="figrow">
+      <figure>
+        <div class="plate plate--historic"><span class="plate__type">Original state</span>Corrosion in the floor and lower body, stripped</div>
+      </figure>
+      <figure>
+        <div class="plate plate--historic"><span class="plate__type">Working step</span>The bare shell, ready for the jig</div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ 5. BODY & STRUCTURE ============ -->
+  <section class="section">
+    <div class="section__head">
+      <p class="eyebrow">03 &middot; Structure and body</p>
+      <h2 class="section__title">Made true again</h2>
+      <p class="section__standfirst">First a jig to hold the car honest, then most of a new shell built around it.</p>
+    </div>
+    <div class="prose">
+      <p>The first task was not to cut, but to hold. A jig was built so that every suspension point sat exactly where Porsche intended, using the factory blueprints as the reference. With the car locked to a structure known to be true, the new metal could be formed around it with confidence. Only then did the cutting begin. The upper body survived; from the waist down, most of the shell was remade.</p>
+
+      <h4>Panel by panel</h4>
+      <p>Roughly seventy percent of the replacement panels were bought in. The remainder were fabricated by hand, and throughout, as much original metal was saved as could honestly be kept. Where weight could be removed, it was: several outer panels are carbon fibre, reinforced with glassfibre, a deliberate saving on a car that was never going to be the most powerful on the road.</p>
+    </div>
+
+    <table class="spec-table spec-table--wide">
+      <caption>Bodywork, panel by panel</caption>
+      <tbody>
+        <tr><th>Front wings</th><td>Carbon fibre, glassfibre reinforced <span class="tag tag--new">new</span></td></tr>
+        <tr><th>Bonnet</th><td>Carbon fibre, glassfibre reinforced <span class="tag tag--new">new</span></td></tr>
+        <tr><th>Both bumpers</th><td>Carbon fibre, glassfibre reinforced <span class="tag tag--new">new</span></td></tr>
+        <tr><th>Deck lid</th><td>Carbon fibre, glassfibre reinforced <span class="tag tag--new">new</span></td></tr>
+        <tr><th>Doors</th><td>Original doors repaired, fitted with new outer skins <span class="tag tag--uprated">repaired</span></td></tr>
+        <tr><th>Rear wings</th><td>Two new wings, flared over the rear wheels, RSR in spirit <span class="tag tag--new">new</span></td></tr>
+        <tr><th>Floor / lower body</th><td>Largely fabricated by hand over the jig <span class="tag tag--new">rebuilt</span></td></tr>
+        <tr><th>Panels bought in</th><td>Approximately 70 percent of replacements</td></tr>
+        <tr><th>Panels fabricated</th><td>The remainder, by hand</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <h4>A racer's detail: the fuel filler</h4>
+      <p>The filler flap was deleted from the wing, and the wing made without it. The filling neck was relocated forward, up by the bonnet, purely because it belongs there: a competition touch on a road car.</p>
+    </div>
+
+    <blockquote class="quote">
+      <p>I made the jig from the blueprints, and I tried to save as much as I could of the original car.</p>
+      <cite>Umberto</cite>
+    </blockquote>
+
+    <div class="figrow">
+      <figure>
+        <div class="plate plate--historic"><span class="plate__type">Working step</span>The jig, with fabricated floor sections in place</div>
+      </figure>
+      <figure>
+        <div class="plate plate--finished"><span class="plate__type">Finished</span>The flared rear arch and relocated filler</div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ 6. PAINT ============ -->
+  <section class="section">
+    <div class="section__head">
+      <p class="eyebrow">04 &middot; Colour</p>
+      <h2 class="section__title">A blue that had to be asked for</h2>
+    </div>
+    <div class="prose">
+      <p>The blue is a genuine Porsche factory colour, not an invention. It is not strictly correct to a 1965 car: this is an early example, and the shade entered the catalogue roughly two years later. But it remains a period 912 colour, and it is exactly the kind of colour that, then as now, was a paid-for special order rather than a standard choice. That small extravagance suits the car.</p>
+    </div>
+    <table class="spec-table">
+      <tbody>
+        <tr><th>Origin</th><td>Genuine Porsche factory colour, special order</td></tr>
+        <tr><th>Period</th><td>A 912-era colour, roughly two years later than this car's build</td></tr>
+        <tr><th>Name / code</th><td><span class="tbc">to confirm</span></td></tr>
+      </tbody>
+    </table>
+    <figure>
+      <div class="plate plate--finished"><span class="plate__type">Finished &middot; professional</span>Body panel in raking light, showing the blue and the finish</div>
+      <figcaption>Colour detail. A reflection shot conveys the depth of the paint better than a flat elevation.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ============ 7. ENGINE ============ -->
+  <section class="section">
+    <div class="section__head">
+      <p class="eyebrow">05 &middot; The engine</p>
+      <h2 class="section__title">Two litres, and almost entirely new</h2>
+      <p class="section__standfirst">A seized, cracked motor became the excuse to build a better one.</p>
+    </div>
+    <div class="prose">
+      <p>The engine arrived seized. A piston had let go, and with it the cylinders and heads were beyond use. Worse, the three-piece aluminium crankcase, the housing on which everything else is built, was cracked. This is a known weakness on these units, related to how the oil circulates. The case was sent away to be welded by specialists, the sort of meticulous work that must be done exactly right or not at all, and the oil circulation was improved to address the cause rather than only the symptom.</p>
+
+      <p>Faced with rebuilding so much of it in any case, the decision was to build something better than standard. Capacity rose from 1.6 to 2.0 litres. Nearly everything inside is new; the single significant survivor is the crankshaft, which was sound, and was balanced and kept.</p>
+    </div>
+
+    <table class="spec-table spec-table--wide">
+      <caption>Engine build, component by component</caption>
+      <tbody>
+        <tr><th>Capacity</th><td>Enlarged from 1.6 to 2.0 litres <span class="tag tag--uprated">uprated</span></td></tr>
+        <tr><th>Crankcase</th><td>Original three-piece alloy case, crack specialist-welded, oil circulation improved <span class="tag tag--uprated">rebuilt</span></td></tr>
+        <tr><th>Heads</th><td>CNC-machined, sourced in Switzerland <span class="tag tag--new">new</span></td></tr>
+        <tr><th>Pistons</th><td>Racing pistons, balanced and weight-matched <span class="tag tag--new">new</span></td></tr>
+        <tr><th>Cylinders</th><td>New, matched to the heads <span class="tag tag--new">new</span></td></tr>
+        <tr><th>Connecting rods</th><td>Carrillo rods, balanced and weight-matched <span class="tag tag--new">new</span></td></tr>
+        <tr><th>Crankshaft</th><td>Original, checked good, balanced <span class="tag tag--kept">retained</span></td></tr>
+        <tr><th>Camshaft</th><td>Street-performance cam <span class="tag tag--new">new</span></td></tr>
+        <tr><th>Timing gears</th><td>Straight-cut (more performance, a little more noise) <span class="tag tag--new">new</span></td></tr>
+        <tr><th>Lifters</th><td>Uprated <span class="tag tag--new">new</span></td></tr>
+        <tr><th>Pushrods</th><td>New <span class="tag tag--new">new</span></td></tr>
+        <tr><th>Valve covers</th><td>New <span class="tag tag--new">new</span></td></tr>
+        <tr><th>Intake manifolds</th><td>New, for the larger carburettors <span class="tag tag--new">new</span></td></tr>
+        <tr><th>Carburettors</th><td>Twin Weber 44 IDF, larger than standard <span class="tag tag--new">new</span></td></tr>
+        <tr><th>Clutch</th><td>Uprated, balanced <span class="tag tag--uprated">uprated</span></td></tr>
+        <tr><th>Cooling tinware</th><td>Missing air-guide panels replaced <span class="tag tag--new">new</span></td></tr>
+        <tr><th>Engine number</th><td><span class="tbc">to confirm</span></td></tr>
+      </tbody>
+    </table>
+
+    <blockquote class="quote">
+      <p>Practically the engine inside is all new. The only thing that isn't new is the crankshaft, and the crankshaft was good.</p>
+      <cite>Umberto</cite>
+    </blockquote>
+
+    <div class="figrow">
+      <figure>
+        <div class="plate plate--historic"><span class="plate__type">Working step</span>The engine stripped: seized piston, cracked case</div>
+      </figure>
+      <figure>
+        <div class="plate plate--finished"><span class="plate__type">Finished &middot; professional</span>The finished engine in the bay, carburettors uppermost</div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ 8. COOLING, FUELLING, EXHAUST ============ -->
+  <section class="section">
+    <div class="section__head">
+      <p class="eyebrow">06 &middot; Cooling, fuelling and exhaust</p>
+      <h2 class="section__title">Built for the road it will actually meet</h2>
+      <p class="section__standfirst">Choices made for a car that now has to sit in traffic these engines never anticipated.</p>
+    </div>
+    <ul class="details">
+      <li><strong>Exhaust:</strong> stainless steel throughout.</li>
+      <li><strong>Fuel pump:</strong> the original mechanical pump, never the most reliable part, removed in favour of an electric pump.</li>
+      <li><strong>Fuel filter and regulator:</strong> a Malpassi filter with an integral adjustable pressure regulator, so fuel pressure can be set precisely.</li>
+      <li><strong>Air filters:</strong> two new K&amp;N filters.</li>
+      <li><strong>Primary oil cooling:</strong> an aluminium oil cooler.</li>
+      <li><strong>Secondary oil cooling:</strong> an additional remote oil cooler with its own electric fan, added specifically so the oil stays cool in the modern traffic these cars were never designed to sit in.</li>
+    </ul>
+    <div class="callout">
+      <h4>Why a second cooler</h4>
+      <p>These cars were built for open roads, not for crawling in queues for hours. The remote cooler and fan are an honest concession to how the car will be used today, there to keep the oil temperature down and protect the freshly built engine.</p>
+    </div>
+    <figure>
+      <div class="plate plate--finished"><span class="plate__type">Finished &middot; professional</span>Engine bay detail: Weber carburettors, K&amp;N filters, coolers and stainless exhaust</div>
+    </figure>
+  </section>
+
+  <!-- ============ 9. RUNNING GEAR ============ -->
+  <section class="section">
+    <div class="section__head">
+      <p class="eyebrow">07 &middot; Running gear</p>
+      <h2 class="section__title">Everything off, everything through</h2>
+      <p class="section__standfirst">Suspension, brakes and gearbox, each taken fully apart and rebuilt.</p>
+    </div>
+    <div class="prose">
+      <p>The whole car was taken down. Every suspension component was stripped, then replaced or refinished, powder-coated, and reassembled. Some original parts earned their place back; where an item was worn, or simply prudent to renew, it was renewed.</p>
+    </div>
+
+    <table class="spec-table spec-table--wide">
+      <caption>Suspension and brakes</caption>
+      <tbody>
+        <tr><th>Bushes</th><td>Around 80 percent polyurethane, firmer, for sharper handling <span class="tag tag--new">new</span></td></tr>
+        <tr><th>Dampers</th><td>Four new dampers, all round <span class="tag tag--new">new</span></td></tr>
+        <tr><th>Torsion bars</th><td>Original, checked good and kept (a low-stress part) <span class="tag tag--kept">retained</span></td></tr>
+        <tr><th>Trailing arms</th><td>Original, powder-coated; one front lower arm replaced <span class="tag tag--kept">retained</span></td></tr>
+        <tr><th>Brake calipers</th><td>New <span class="tag tag--new">new</span></td></tr>
+        <tr><th>Brake pads</th><td>New <span class="tag tag--new">new</span></td></tr>
+        <tr><th>Brake discs</th><td>New <span class="tag tag--new">new</span></td></tr>
+        <tr><th>Handbrake shoes</th><td>New <span class="tag tag--new">new</span></td></tr>
+        <tr><th>Handbrake cables</th><td>New <span class="tag tag--new">new</span></td></tr>
+        <tr><th>Clutch cable</th><td>New <span class="tag tag--new">new</span></td></tr>
+        <tr><th>Finish</th><td>All refurbished parts powder-coated</td></tr>
+      </tbody>
+    </table>
+
+    <div class="prose">
+      <h4>The gearbox</h4>
+      <p>The gearbox was completely rebuilt. The good gears were retained; the worn ones, reverse among them, were replaced. On principle, every bearing was renewed, even those that looked serviceable, because with the box already apart there was no sense in trusting an old bearing back into a fresh build.</p>
+    </div>
+    <ul class="details">
+      <li><strong>Rebuild:</strong> stripped, cleaned, and reassembled completely.</li>
+      <li><strong>Gears replaced:</strong> the worn gears, including reverse.</li>
+      <li><strong>Gears retained:</strong> those found to be good.</li>
+      <li><strong>Bearings:</strong> all renewed, without exception.</li>
+      <li><strong>Fuel tank:</strong> new, with a new sender.</li>
+    </ul>
+
+    <div class="figrow">
+      <figure>
+        <div class="plate plate--historic"><span class="plate__type">Working step</span>The gearbox apart: bearings and gears laid out</div>
+      </figure>
+      <figure>
+        <div class="plate plate--finished"><span class="plate__type">Finished</span>A rebuilt, powder-coated suspension corner</div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ 10. WHEELS ============ -->
+  <section class="section">
+    <div class="section__head">
+      <p class="eyebrow">08 &middot; Wheels and tyres</p>
+      <h2 class="section__title">A little wider, for the way it drives</h2>
+    </div>
+    <div class="prose">
+      <p>The car arrived on a mismatched set, two of them oversized. A new set was bought in its place. The tyres are marginally wider than standard and on a lower profile (a 55 section in place of the original 60), which keeps them close to the original look while adding grip. The original rear tyres were narrow; a slightly wider tyre at the back improves the handling, which was the point. That they also look right is a welcome bonus.</p>
+    </div>
+    <table class="spec-table">
+      <tbody>
+        <tr><th>Wheels</th><td>New matched set <span class="tag tag--new">new</span></td></tr>
+        <tr><th>Tyres</th><td>Slightly wider, lower profile (55 section in place of 60)</td></tr>
+        <tr><th>Reason</th><td>Grip and handling, especially at the rear; close to original appearance</td></tr>
+      </tbody>
+    </table>
+    <figure>
+      <div class="plate plate--finished"><span class="plate__type">Finished &middot; professional</span>Wheel and flared arch, three-quarter low angle</div>
+    </figure>
+  </section>
+
+  <!-- ============ 11. INTERIOR ============ -->
+  <section class="section">
+    <div class="section__head">
+      <p class="eyebrow">09 &middot; Interior</p>
+      <h2 class="section__title">Blue, orange, and Scottish tweed</h2>
+      <p class="section__standfirst">Where the car stops being a restoration and becomes a personal statement.</p>
+    </div>
+    <div class="prose">
+      <p>If the body stays close to what Porsche made, the interior is where the car becomes personal. The starting point was the blue. From there came a Scottish tweed whose orange and blue sat perfectly against it, and an orange Alcantara chosen to match the tweed. The pairing carries an unspoken echo of the most famous racing livery in blue and orange, arrived at, by the builder's own account, mostly because the colours simply looked right together.</p>
+      <p>The seats were trimmed by a trusted upholsterer. The Alcantara chosen is not, strictly, the ideal grade for seats and leaves a slight crease, but it was the right orange, and the result was worth it.</p>
+
+      <h4>Seats and safety</h4>
+      <p>In place of a roll cage, which would have made a track car of something never meant to be one, there is a discreet reinforcement bar, cut in and added, with a four-point harness fixed to it. The two rear seats, the tiny ones that fit no adult and were only ever meant for children, were remade in the same materials.</p>
+
+      <h4>Floor and sound</h4>
+      <p>There is no carpet. The blue floor is left deliberately visible, dressed with aluminium mats painted blue to match. Hidden beneath sits Dynamat sound-deadening for the noise and vibration an aluminium-and-steel car will make. The front footwells are lined with aluminium panels and covered in a black diamond-pattern vinyl, so everything the eye reaches is tidy.</p>
+
+      <h4>Dashboard and instruments</h4>
+      <p>A new lower dashboard section was made, with a band of the same tweed running across it around the ignition and the lighter, in place of the original aluminium trim, simply because it looks better. This was a three-gauge car; two gauges were added, oil pressure and charging, the two worth watching.</p>
+
+      <h4>The steering wheel</h4>
+      <p>It arrived with an unattractive Momo wheel. An original was found but set aside as too large at 40cm. A 38cm was tried, and finally the current wheel chosen: a deep-dish four-spoke that brings the rim toward the driver for a more purposeful position, yet stays close in look to the original four-spoke, so the cabin keeps its period character.</p>
+
+      <h4>Woodwork</h4>
+      <p>Two small pieces of hardwood warm the whole: a gear knob, and a matching knob on the heater lever, cut from the same wood and to the same pattern.</p>
+    </div>
+
+    <table class="spec-table spec-table--wide">
+      <caption>Interior, at a glance</caption>
+      <tbody>
+        <tr><th>Upholstery</th><td>Blue leather, orange Alcantara, Scottish tweed</td></tr>
+        <tr><th>Front seats</th><td>Retrimmed by a specialist upholsterer</td></tr>
+        <tr><th>Rear seats</th><td>Remade in matching materials</td></tr>
+        <tr><th>Safety</th><td>Reinforcement bar with four-point harness (no roll cage)</td></tr>
+        <tr><th>Floor</th><td>No carpet; blue-painted aluminium mats over Dynamat</td></tr>
+        <tr><th>Footwells</th><td>Aluminium panels, black diamond-pattern vinyl</td></tr>
+        <tr><th>Door panels</th><td>Made in aluminium</td></tr>
+        <tr><th>Rear panels</th><td>Made to cover the rear seat area</td></tr>
+        <tr><th>Dashboard</th><td>New lower section with a tweed band</td></tr>
+        <tr><th>Instruments</th><td>Original three, plus added oil-pressure and charging gauges</td></tr>
+        <tr><th>Steering wheel</th><td>Deep-dish four-spoke, original in character</td></tr>
+        <tr><th>Woodwork</th><td>Hardwood gear knob and matching heater knob</td></tr>
+        <tr><th>Material suppliers</th><td><span class="tbc">to confirm, if to be credited</span></td></tr>
+      </tbody>
+    </table>
+
+    <blockquote class="quote">
+      <p>The Alcantara leaves a little crease, but it was the right orange. I loved how the colours match together.</p>
+      <cite>Umberto</cite>
+    </blockquote>
+
+    <div class="figrow">
+      <figure>
+        <div class="plate plate--finished"><span class="plate__type">Finished &middot; professional</span>Cabin, wide: seats, harness, floor and dash together</div>
+      </figure>
+      <figure>
+        <div class="plate plate--finished"><span class="plate__type">Finished</span>The tweed band across the dashboard</div>
+      </figure>
+      <figure>
+        <div class="plate plate--finished"><span class="plate__type">Finished</span>Orange Alcantara and tweed, seat detail</div>
+      </figure>
+      <figure>
+        <div class="plate plate--finished"><span class="plate__type">Finished</span>Hardwood gear knob</div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ 12. GLASS ============ -->
+  <section class="section">
+    <div class="section__head">
+      <p class="eyebrow">10 &middot; Glass, mirrors and rubbers</p>
+      <h2 class="section__title">The parts you notice last</h2>
+    </div>
+    <ul class="details">
+      <li><strong>Windscreen:</strong> renewed. The original had begun to delaminate, a film creeping between its two layers, though it had not actually cracked.</li>
+      <li><strong>Rear screen:</strong> original, saved and refitted.</li>
+      <li><strong>Door and rear quarter glass:</strong> original, retained.</li>
+      <li><strong>Rubbers:</strong> every rubber renewed. There is no old rubber anywhere on the car.</li>
+      <li><strong>Frames:</strong> door glass frames and rear quarter window frames removed and powder-coated.</li>
+      <li><strong>Mirror:</strong> a single mirror on the driver's side, where it is needed to overtake, a new part of the correct old type, on a car that arrived with none.</li>
+    </ul>
+    <figure>
+      <div class="plate plate--finished"><span class="plate__type">Finished</span>Driver's mirror and refreshed glass surround</div>
+    </figure>
+  </section>
+
+  <!-- ============ 13. LIGHTS ============ -->
+  <section class="section">
+    <div class="section__head">
+      <p class="eyebrow">11 &middot; Lights</p>
+      <h2 class="section__title">A resourceful pair of headlights</h2>
+    </div>
+    <div class="prose">
+      <p>The standard 912 headlights, with their large lenses, were not to the builder's taste, and the clear-glass lamps he wanted are no longer made. The solution was to take headlight units from a 356 and modify them to fit the 912's holders, giving the clear glass with the pattern set inside, exactly the look intended.</p>
+    </div>
+    <ul class="details">
+      <li><strong>Headlights:</strong> 356 units modified to fit; clear glass, internal pattern.</li>
+      <li><strong>Front indicators and surrounds:</strong> restored, frames powder-coated in their silver finish.</li>
+      <li><strong>Rear lights:</strong> housing the stop, reverse and indicator functions; powder-coated, with new lenses and bulbs.</li>
+    </ul>
+    <div class="figrow">
+      <figure>
+        <div class="plate plate--finished"><span class="plate__type">Finished &middot; professional</span>The modified 356 headlight, clear glass</div>
+      </figure>
+      <figure>
+        <div class="plate plate--finished"><span class="plate__type">Finished</span>Rear light cluster, new lenses</div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ 14. ELECTRICS ============ -->
+  <section class="section">
+    <div class="section__head">
+      <p class="eyebrow">12 &middot; Electrics</p>
+      <h2 class="section__title">A new loom, wire by wire</h2>
+    </div>
+    <div class="prose">
+      <p>The original loom came out burnt. The car was born with a generator, since converted to an alternator, and the main feed for the charging system, a thick wire running the whole length of the car, had cooked a run of the harness with it. Rather than chase a fault through scorched wiring, the loom was made again from nothing, by hand, one wire at a time.</p>
+      <p>A few spare wires were run deliberately and hidden inside, so any future addition can be made cleanly, without a cable taped along the outside looking like an afterthought. Switches that would clutter the dash, for the cooling fan and the hazards, are tucked out of sight to keep the fascia calm.</p>
+    </div>
+    <ul class="details">
+      <li><strong>Loom:</strong> entirely remade by hand, wire by wire.</li>
+      <li><strong>Charging:</strong> generator converted to alternator.</li>
+      <li><strong>Provision:</strong> spare wires run internally for future additions (fuel pump, fan, and more).</li>
+      <li><strong>Switchgear:</strong> a different hazard switch; fan switch hidden; dash kept clean.</li>
+    </ul>
+    <figure>
+      <div class="plate plate--historic"><span class="plate__type">Working step</span>The new loom laid out during the rewire</div>
+    </figure>
+  </section>
+
+  <!-- ============ 15. ENGINE BAY FINISH ============ -->
+  <section class="section">
+    <div class="section__head">
+      <p class="eyebrow">13 &middot; The engine bay, finished</p>
+      <h2 class="section__title">Tidy where no one has to look</h2>
+    </div>
+    <div class="prose">
+      <p>Because the cabin has no carpet, the firewall behind the rear seats is left visible from inside. Before the engine went back in, the engine-bay face of that firewall was insulated with Dynamat pads and then covered with a leather panel in a diamond pattern, hiding the deadening and making the bay read as tidily as the cabin. It is finishing applied where most builders would leave bare metal.</p>
+    </div>
+    <figure>
+      <div class="plate plate--finished"><span class="plate__type">Finished &middot; professional</span>Diamond-pattern leather panel across the engine-bay firewall</div>
+    </figure>
+  </section>
+
+  <!-- ============ 16. CHARACTER ============ -->
+  <section class="section">
+    <div class="section__head">
+      <p class="eyebrow">14 &middot; Character and faithfulness</p>
+      <h2 class="section__title">Far from standard, never modern</h2>
+      <p class="section__standfirst">How far this car sits from the one that left the factory, honestly answered.</p>
+    </div>
+    <div class="prose">
+      <p>The honest answer is: a long way, and yet not at all. The engine and the interior are transformed. But the upgrades do not change how the car reads. The body is little altered beyond the rear flares, the slightly fuller tyres and the deck lid, and every one of those belongs to the vocabulary of period racing, nothing that was not done in the day.</p>
+      <p>The interior is the largest departure, and only in its colour; in spirit, the tweed and the palette are chosen in the idiom of the era. The dashboard is kept close to original, and the steering wheel, though different, stays a clear relative of the factory wheel. Nothing about the car feels like this decade. It carries the feeling of a 1960s and 1970s car, which was the whole intention. It will simply be faster.</p>
+    </div>
+    <table class="spec-table spec-table--wide">
+      <caption>Retained and changed</caption>
+      <tbody>
+        <tr><th>Kept faithful</th><td>Overall body shape, dashboard architecture, steering wheel character, period colour and materials idiom</td></tr>
+        <tr><th>Changed for the better</th><td>Engine (2.0 litres, largely new), interior colour and trim, wider tyres, rear flares, lightweight panels</td></tr>
+        <tr><th>In the period idiom</th><td>Every visible change follows what was done for racing in the day, not modern fashion</td></tr>
+      </tbody>
+    </table>
+    <blockquote class="quote">
+      <p>It's got the feeling of a 60s, 70s car, which is what I wanted. I never wanted it to look modern. It will be faster, though.</p>
+      <cite>Umberto</cite>
+    </blockquote>
+    <figure>
+      <div class="plate plate--finished"><span class="plate__type">Finished &middot; professional</span>Full-car beauty shot, side profile</div>
+    </figure>
+  </section>
+
+  <!-- ============ 17. HARDEST PARTS ============ -->
+  <section class="section">
+    <div class="section__head">
+      <p class="eyebrow">15 &middot; The hardest parts</p>
+      <h2 class="section__title">What the work asked for</h2>
+    </div>
+    <div class="prose">
+      <p>Asked to name the most difficult and most satisfying part, the builder names two. The first is the structure: building the jig and getting every fabricated panel to sit exactly where it should. The second is the engine, so heavily modified that reassembling it and having it run cleanly was its own challenge. It ran well from the first time it started, which, given how much of it was new, is the quiet measure of the work.</p>
+    </div>
+    <ul class="details">
+      <li><strong>The jig and panels:</strong> holding the car true and placing hand-made metal precisely.</li>
+      <li><strong>The engine:</strong> assembling a heavily modified motor that ran well from the first start.</li>
+    </ul>
+    <figure>
+      <div class="plate plate--historic"><span class="plate__type">Working step</span>Fabrication in progress, or the engine on the bench</div>
+    </figure>
+  </section>
+
+  <!-- ============ 18. FULL SPEC ============ -->
+  <section class="section">
+    <div class="section__head">
+      <p class="eyebrow">16 &middot; Reference</p>
+      <h2 class="section__title">Full specification</h2>
+      <p class="section__standfirst">Everything above, gathered in one place.</p>
+    </div>
+
+    <table class="spec-table spec-table--wide">
+      <caption>Identity</caption>
+      <tbody>
+        <tr><th>Marque and model</th><td>Porsche 912</td></tr>
+        <tr><th>Year</th><td>1965</td></tr>
+        <tr><th>Chassis number</th><td><span class="tbc">to confirm</span></td></tr>
+        <tr><th>Engine number</th><td><span class="tbc">to confirm</span></td></tr>
+        <tr><th>In the workshop since</th><td><span class="tbc">to confirm</span></td></tr>
+        <tr><th>Status</th><td>Restoration ongoing, completion expected 2026</td></tr>
+      </tbody>
+    </table>
+
+    <table class="spec-table spec-table--wide">
+      <caption>Engine and drivetrain</caption>
+      <tbody>
+        <tr><th>Type</th><td>Air-cooled flat four</td></tr>
+        <tr><th>Capacity</th><td>2.0 litres (enlarged from 1.6)</td></tr>
+        <tr><th>Heads</th><td>CNC-machined, Swiss-sourced</td></tr>
+        <tr><th>Pistons and rods</th><td>Racing pistons, Carrillo rods, balanced</td></tr>
+        <tr><th>Camshaft</th><td>Street-performance</td></tr>
+        <tr><th>Timing</th><td>Straight-cut gears</td></tr>
+        <tr><th>Induction</th><td>Twin Weber 44 IDF</td></tr>
+        <tr><th>Crankshaft</th><td>Original, balanced</td></tr>
+        <tr><th>Clutch</th><td>Uprated, balanced</td></tr>
+        <tr><th>Gearbox</th><td>Fully rebuilt, all bearings renewed</td></tr>
+      </tbody>
+    </table>
+
+    <table class="spec-table spec-table--wide">
+      <caption>Fuelling, cooling and exhaust</caption>
+      <tbody>
+        <tr><th>Fuel pump</th><td>Electric, replacing mechanical</td></tr>
+        <tr><th>Fuel regulation</th><td>Malpassi filter with adjustable regulator</td></tr>
+        <tr><th>Air filters</th><td>Two K&amp;N</td></tr>
+        <tr><th>Oil cooling</th><td>Aluminium cooler, plus remote cooler with fan</td></tr>
+        <tr><th>Exhaust</th><td>Stainless steel</td></tr>
+        <tr><th>Fuel tank</th><td>New, new sender, filler relocated to the front</td></tr>
+      </tbody>
+    </table>
+
+    <table class="spec-table spec-table--wide">
+      <caption>Chassis, suspension and brakes</caption>
+      <tbody>
+        <tr><th>Body</th><td>Steel shell rebuilt on a jig; carbon-fibre wings, bonnet, bumpers and deck lid; flared rear arches</td></tr>
+        <tr><th>Bushes</th><td>Approximately 80 percent polyurethane</td></tr>
+        <tr><th>Dampers</th><td>New, four</td></tr>
+        <tr><th>Torsion bars</th><td>Original</td></tr>
+        <tr><th>Trailing arms</th><td>Original (one front lower arm replaced)</td></tr>
+        <tr><th>Brakes</th><td>New calipers, pads, discs; new handbrake shoes and cables</td></tr>
+        <tr><th>Wheels and tyres</th><td>New set, slightly wider, 55-section</td></tr>
+      </tbody>
+    </table>
+
+    <table class="spec-table spec-table--wide">
+      <caption>Body, electrics and interior</caption>
+      <tbody>
+        <tr><th>Colour</th><td>Porsche factory special-order blue (<span class="tbc">code to confirm</span>)</td></tr>
+        <tr><th>Headlights</th><td>Modified 356 units, clear glass</td></tr>
+        <tr><th>Wiring</th><td>New hand-built loom; generator to alternator</td></tr>
+        <tr><th>Glass</th><td>New windscreen; original rear, door and quarter glass</td></tr>
+        <tr><th>Interior</th><td>Blue leather, orange Alcantara, Scottish tweed; no carpet</td></tr>
+        <tr><th>Safety</th><td>Reinforcement bar, four-point harness</td></tr>
+        <tr><th>Instruments</th><td>Five gauges (three original plus oil pressure and charging)</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ============ 19. CLOSING ============ -->
+  <section class="section closing">
+    <p class="eyebrow">17 &middot; For the next owner</p>
+    <h2 class="section__title" style="margin-bottom:1.4rem;">A car to be understood</h2>
+    <div class="prose" style="margin: 0 auto; text-align: left;">
+      <p>What the builder hopes for the car is simple, and worth saying plainly: someone who will take good care of it, who will understand everything that has been done, and who will enjoy it. And, one day, the chance to see it again at a show, in the hands of whoever comes next.</p>
+      <p>Ask about the next project and the answer is open. There are too many he would like to build, and it depends on what is possible. Pressed for a dream, it is a grand one: to 3D-scan a 1950s Formula 1 car in a museum and build it from scratch, because a car like that cannot be bought, only made. It is the kind of ambition that explains a car like this one.</p>
+    </div>
+    <blockquote class="quote" style="margin: 2.6rem auto; text-align: left; max-width: 34rem;">
+      <p>I hope for someone who will take good care of it, understand everything that has been done, and just enjoy it.</p>
+      <cite>Umberto</cite>
+    </blockquote>
+    <figure style="margin-left:auto; margin-right:auto;">
+      <div class="plate plate--finished"><span class="plate__type">Finished &middot; professional</span>The car leaving: rear three-quarter, on the road</div>
+    </figure>
+    <hr class="rule rule--center">
+    <p class="colophon">
+      De Caires Classics &middot; Maremma, Tuscany<br>
+      info@decairesclassics.com
+    </p>
+  </section>
+
+</div>
+</body>
+</html>
