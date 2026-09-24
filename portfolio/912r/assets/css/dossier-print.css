@@ -1,0 +1,300 @@
+/* ============================================================
+   De Caires Classics: Vehicle Dossier
+   Print stylesheet, read by Paged.js only (passed explicitly to
+   Paged.Previewer().preview(), not linked for on-screen rendering).
+   Page furniture lives here: size, margins, running heads, folio,
+   break control. Nothing here should redefine brand tokens; it
+   reads --black/--white/--gold/--grey/--font-display/--font-body
+   from /css/style.css, fetched into the same Paged polisher pass.
+   ============================================================ */
+
+/* --- Page box --------------------------------------------------- */
+@page {
+  size: A4;
+  margin: 30mm 24mm 26mm 24mm;
+
+  @top-left {
+    content: element(runningHeadBrand);
+    vertical-align: bottom;
+    padding-bottom: 4mm;
+  }
+  @top-right {
+    content: element(runningHeadSection);
+    vertical-align: bottom;
+    padding-bottom: 4mm;
+  }
+  @bottom-center {
+    content: element(printFolio);
+    vertical-align: top;
+    padding-top: 4mm;
+  }
+}
+
+/* Cover: full bleed, no furniture, not numbered */
+@page cover {
+  margin: 0;
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-center { content: none; }
+}
+
+/* --- Base print canvas ------------------------------------------- */
+#print-root {
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--font-body);
+  font-size: 10.5pt;
+  line-height: 1.7;
+}
+#print-root * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+#print-root h2, #print-root h3 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  color: var(--black);
+}
+
+#print-root p, #print-root li {
+  orphans: 3;
+  widows: 3;
+  margin-bottom: 0.9em;
+}
+#print-root p:last-child { margin-bottom: 0; }
+#print-root strong { font-weight: 500; }
+#print-root blockquote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 13pt;
+  border-left: 1pt solid var(--gold);
+  padding-left: 6mm;
+  margin: 6mm 0;
+  break-inside: avoid;
+}
+
+/* --- Running head elements (GCPM) --------------------------------- */
+.running-head--brand {
+  position: running(runningHeadBrand);
+  font-size: 7.5pt;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.running-head--section {
+  position: running(runningHeadSection);
+  font-size: 7.5pt;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--slate, var(--grey));
+  text-align: right;
+}
+.print-folio {
+  position: running(printFolio);
+  font-size: 8pt;
+  color: var(--gold);
+  text-align: center;
+}
+.print-folio::before,
+.print-folio::after {
+  content: '';
+  display: inline-block;
+  width: 3mm;
+  height: 1px;
+  background: var(--gold);
+  vertical-align: middle;
+  margin: 0 2mm;
+}
+.print-folio__num::before { content: counter(page); }
+
+/* A hairline rule under the running head, drawn on every page via
+   the section title block's own border since Paged margin boxes
+   can't easily carry a full-bleed rule of their own. */
+
+/* --- Section flow -------------------------------------------------- */
+.dossier-section {
+  break-before: page;
+}
+.dossier-section:first-child { break-before: avoid; }
+
+/* Restart numbering after the (unnumbered) cover page */
+.section--cover + .dossier-section {
+  counter-reset: page 1;
+}
+
+.section--cover { page: cover; }
+
+.dossier-section__header {
+  break-after: avoid;
+  margin-bottom: 8mm;
+}
+.dossier-section__eyebrow {
+  font-size: 8pt;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 3mm;
+}
+.dossier-section__title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 26pt;
+  color: var(--black);
+  margin-bottom: 3mm;
+}
+.dossier-section__rule {
+  width: 14mm;
+  height: 1pt;
+  background: var(--gold);
+}
+
+/* --- Cover page ------------------------------------------------------ */
+/* Fill whatever the page box actually resolves to rather than
+   re-declaring the A4 dimensions: a redundant explicit 297mm height
+   nested inside a content box Paged.js has already sized to exactly
+   one page is what was producing a stray blank second page. */
+.section--cover {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.cover__hero { position: absolute; inset: 0; }
+.cover__hero .slot { width: 100%; height: 100%; aspect-ratio: unset; border: none; margin: 0; }
+.cover__hero .slot img { filter: saturate(0.7) contrast(1.05); }
+.cover__scrim {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(10,10,10,0.94) 0%, rgba(10,10,10,0.1) 60%, transparent 100%);
+}
+.cover__content {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 0 24mm 26mm;
+  text-align: center;
+  color: var(--white);
+}
+.cover__mark { height: 13mm; margin: 0 auto 6mm; }
+.cover__identity-eyebrow {
+  font-size: 8pt;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 3mm;
+}
+.cover__title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 40pt;
+  color: var(--white);
+}
+.cover__year {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 13pt;
+  color: rgba(245,240,232,0.75);
+  margin-top: 2mm;
+}
+
+/* --- Brief grid (section 02) ------------------------------------------- */
+.brief-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6mm 10mm;
+  margin: 6mm 0;
+}
+.brief-grid > div { break-inside: avoid; }
+.brief-grid dt {
+  font-size: 7pt;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate, var(--grey));
+  margin-bottom: 1mm;
+}
+.brief-grid dd {
+  font-family: var(--font-display);
+  font-size: 12pt;
+  color: var(--black);
+  line-height: 1.4;
+}
+.brief-grid dd .todo { color: var(--slate, var(--grey)); font-family: var(--font-body); font-size: 0.82em; font-style: italic; }
+
+/* --- Figures / image slots (print) --------------------------------------- */
+.slot {
+  position: relative;
+  background: #e4e0d8;
+  border: 0.5pt solid var(--gold);
+  overflow: hidden;
+  margin: 6mm 0;
+  break-inside: avoid;
+}
+.slot[data-role="HERO"]    { aspect-ratio: 3 / 2; }
+.slot[data-role="DETAIL"]  { aspect-ratio: 4 / 5; max-width: 70mm; }
+.slot[data-role="PROCESS"] { aspect-ratio: 4 / 3; }
+.slot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.slot--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #d9d5cc;
+}
+.slot--empty::before {
+  content: '';
+  position: absolute;
+  inset: 4mm;
+  border: 0.5pt solid var(--gold);
+  pointer-events: none;
+}
+.slot__label { text-align: center; padding: 5mm; color: var(--slate, var(--grey)); }
+.slot__label .slot__role {
+  display: block;
+  font-size: 6.5pt;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 2mm;
+}
+.slot__label .slot__subject {
+  display: block;
+  font-size: 7.5pt;
+  letter-spacing: 0.02em;
+  max-width: 46mm;
+  margin: 0 auto;
+}
+
+/* screen-derivative images never appear in the print pass; the
+   print derivative (or the placeholder above) is used instead. */
+.slot .screen-only { display: none; }
+.slot .print-only { display: block; }
+
+.figure__caption {
+  font-size: 8pt;
+  color: var(--slate, var(--grey));
+  margin-top: 2mm;
+}
+
+/* --- Tables (section 08 and elsewhere) ------------------------------------ */
+#print-root table {
+  width: 100%;
+  border-collapse: collapse;
+  break-inside: avoid;
+  font-size: 9pt;
+  margin: 4mm 0 6mm;
+}
+#print-root th, #print-root td {
+  text-align: left;
+  padding: 2mm 3mm;
+  border-bottom: 0.5pt solid var(--rule-print, rgba(74,74,74,0.35));
+}
+#print-root th {
+  font-size: 7pt;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--slate, var(--grey));
+  border-bottom: 0.75pt solid var(--gold);
+}

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>912R Press Pack | De Caires Classics</title>
+<meta name="description" content="Press pack for 912R: a 1965 Porsche 912 rebuilt over seven years by one pair of hands. De Caires Classics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     912R Press Pack
+     Four A4 pages. Picture-led, for editorial enquiry.
+     Print: Chrome headless --print-to-pdf --no-pdf-header-footer
+     ============================================================ */
+
+  :root {
+    --black:   #0B0D0F;
+    --char:    #14181B;
+    --line:    #2C3338;
+    --white:   #F4F1EA;
+    --grey:    #A7ADB2;
+    --blue:    #5FC6DD;   /* Crystal Blue, as an accent */
+    --orange:  #E2853E;   /* the Alcantara */
+    --display: 'Cormorant Garamond', 'Times New Roman', serif;
+    --body:    'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  @page { size: A4; margin: 0; }
+
+  html { background: #333; }
+  body {
+    font-family: var(--body);
+    background: var(--black);
+    color: var(--white);
+    font-weight: 300;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+  /* Cormorant defaults to old-style figures; force lining numerals so
+     dates, capacities and chassis numbers sit on the baseline. */
+  h1, h2, h3, .numbers .n, .cover__facts div, .cover__sub, .head .standfirst,
+  .sidebar li::before, .drop::first-letter {
+    font-variant-numeric: lining-nums;
+    font-feature-settings: "lnum" 1, "onum" 0;
+  }
+
+  .page {
+    position: relative;
+    width: 210mm;
+    height: 296.8mm;
+    overflow: hidden;
+    background: var(--black);
+    margin: 0 auto;
+    break-after: page;
+    page-break-after: always;
+    display: flex;
+    flex-direction: column;
+  }
+  .page:last-of-type { break-after: auto; page-break-after: auto; }
+
+  /* screen-only separation between sheets */
+  @media screen { .page { margin-bottom: 8mm; box-shadow: 0 0 30px rgba(0,0,0,.6); } }
+
+  .pad { padding: 0 16mm; }
+
+  /* ---------- type ---------- */
+  .eyebrow {
+    font-size: 7pt;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--blue);
+  }
+  .eyebrow--grey { color: var(--grey); }
+
+  h1 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: 104pt;
+    line-height: 0.84;
+    letter-spacing: -0.015em;
+  }
+  h2 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: 30pt;
+    line-height: 1.02;
+    letter-spacing: -0.005em;
+  }
+  h3 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 14pt;
+    line-height: 1.15;
+    color: var(--white);
+  }
+  p { font-size: 9pt; line-height: 1.66; color: #DBD7CE; }
+  p + p { margin-top: 1.5mm; }
+  .lead { font-size: 10.5pt; line-height: 1.5; color: var(--white); font-weight: 300; }
+  .drop::first-letter {
+    font-family: var(--display);
+    float: left;
+    font-size: 30pt;
+    line-height: 0.82;
+    padding: 1mm 2mm 0 0;
+    color: var(--blue);
+  }
+
+  .rule { height: 1px; background: var(--line); border: 0; }
+  .rule--blue { height: 1.4pt; background: var(--blue); }
+
+  figcaption {
+    font-size: 6.4pt;
+    letter-spacing: 0.045em;
+    line-height: 1.4;
+    color: var(--grey);
+    margin-top: 1.6mm;
+  }
+  figcaption b { color: var(--blue); font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; font-size: 5.8pt; }
+
+  /* ============================================================
+     PAGE 1: COVER
+     ============================================================ */
+  /* 210mm / 1.333 = 157mm: the tallest this 4:3 frame can be without cropping the car horizontally */
+  .cover__img { height: 157mm; position: relative; flex: none; }
+  .cover__img img { object-position: 50% 56%; }
+  .cover__img::after {
+    content: ""; position: absolute; inset: auto 0 0 0; height: 44mm;
+    background: linear-gradient(to bottom, rgba(11,13,15,0), rgba(11,13,15,.75) 62%, var(--black));
+  }
+  .cover__body { flex: 1; display: flex; flex-direction: column; justify-content: space-between; padding: 5mm 16mm 13mm; }
+  .cover__marque { font-size: 8pt; letter-spacing: 0.42em; text-transform: uppercase; color: var(--grey); font-weight: 400; }
+  .cover__title { margin: 3mm 0 0; }
+  .cover__title em { font-style: normal; color: var(--blue); }
+  .cover__sub {
+    font-family: var(--display);
+    font-size: 17pt;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.25;
+    margin-top: 4mm;
+    max-width: 130mm;
+  }
+  .cover__facts {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 6mm;
+    border-top: 1.2pt solid var(--blue);
+    padding-top: 3.5mm;
+  }
+  .cover__facts div { font-family: var(--display); font-size: 12.5pt; color: var(--white); line-height: 1.15; }
+  .cover__facts span {
+    display: block; font-family: var(--body); font-size: 5.8pt; font-weight: 500;
+    letter-spacing: 0.24em; text-transform: uppercase; color: var(--grey); margin-bottom: 1.6mm;
+  }
+  .cover__foot { display: flex; justify-content: space-between; align-items: flex-end; gap: 8mm; }
+  .cover__foot p { font-size: 7.4pt; color: var(--grey); line-height: 1.55; }
+  .cover__stamp { text-align: right; }
+  .cover__stamp span { display: block; font-size: 6.4pt; letter-spacing: 0.22em; text-transform: uppercase; color: var(--blue); }
+
+  /* ============================================================
+     PAGE 2: THE STORY
+     ============================================================ */
+  .head { padding: 16mm 16mm 0; flex: none; }
+  .head h2 { margin: 3mm 0 0; }
+  .head .standfirst { font-size: 9.6pt; color: var(--grey); margin-top: 3mm; max-width: 145mm; font-style: italic; font-family: var(--display); }
+
+  .cols { display: grid; grid-template-columns: 1fr 62mm; gap: 9mm; margin-top: 9mm; }
+
+  .sidebar { border: 1pt solid var(--line); padding: 5mm 5mm 5.5mm; background: var(--char); }
+  .sidebar h4 { font-family: var(--display); font-size: 13pt; font-weight: 400; line-height: 1.1; margin-bottom: 3mm; }
+  .sidebar ol { list-style: none; counter-reset: hook; }
+  .sidebar li { counter-increment: hook; font-size: 7.8pt; line-height: 1.45; color: #DBD7CE; padding-left: 6mm; position: relative; }
+  .sidebar li + li { margin-top: 2.6mm; padding-top: 2.6mm; border-top: 1px solid var(--line); }
+  .sidebar li::before {
+    content: counter(hook); position: absolute; left: 0; top: 0.2mm;
+    font-family: var(--display); font-size: 11pt; color: var(--blue); line-height: 1;
+  }
+  .sidebar li b { color: var(--white); font-weight: 500; }
+
+  .quote {
+    margin-top: 8mm; padding-left: 6mm; border-left: 1.4pt solid var(--orange);
+  }
+  .quote p {
+    font-family: var(--display); font-style: italic; font-size: 15pt; line-height: 1.28; color: var(--white);
+  }
+  .quote cite { display: block; font-style: normal; font-size: 6.6pt; letter-spacing: 0.24em; text-transform: uppercase; color: var(--grey); margin-top: 2.5mm; }
+
+  .strip3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; }
+  .strip3 .fr { height: 63mm; }
+  .strip2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; }
+
+  /* ============================================================
+     PAGE 3: THE CAR NOW
+     ============================================================ */
+  .bleed { position: relative; flex: none; }
+  .bleed figcaption { position: absolute; left: 16mm; bottom: 3mm; margin: 0; color: rgba(244,241,234,.85); text-shadow: 0 1px 4px rgba(0,0,0,.9); }
+
+  .numbers { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .numbers div { padding: 4.5mm 3mm; text-align: center; }
+  .numbers div + div { border-left: 1px solid var(--line); }
+  .numbers .n { font-family: var(--display); font-size: 26pt; line-height: 1; color: var(--blue); font-weight: 300; }
+  .numbers .l { font-size: 6.2pt; letter-spacing: 0.2em; text-transform: uppercase; color: var(--grey); margin-top: 2mm; }
+
+  .spec { display: grid; grid-template-columns: 1fr 1fr; gap: 0 9mm; }
+  .spec dl { display: block; }
+  .spec .row { display: flex; gap: 3mm; padding: 1.7mm 0; border-bottom: 1px solid var(--line); font-size: 7.6pt; }
+  .spec dt { flex: 0 0 26mm; color: var(--grey); letter-spacing: 0.04em; }
+  .spec dd { color: #DBD7CE; }
+
+  /* ============================================================
+     PAGE 4: DETAILS + CONTACT
+     ============================================================ */
+  .details { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7mm; }
+  .details h3 { margin-bottom: 2mm; }
+  .details .kicker { font-size: 6.2pt; letter-spacing: 0.24em; text-transform: uppercase; color: var(--blue); margin-bottom: 1.5mm; }
+  .details p { font-size: 7.5pt; line-height: 1.55; }
+
+  .maker { display: grid; grid-template-columns: 34mm 1fr; gap: 7mm; align-items: start; }
+  .maker__img { height: 46mm; }
+  .maker h3 { font-size: 15pt; margin-bottom: 2mm; }
+  .maker p { font-size: 7.5pt; line-height: 1.55; }
+  .maker .kicker { font-size: 6.2pt; letter-spacing: 0.24em; text-transform: uppercase; color: var(--orange); margin-bottom: 1.5mm; }
+
+  .contact { border: 1pt solid var(--blue); padding: 6mm 7mm; display: grid; grid-template-columns: 1fr 1fr; gap: 6mm 9mm; }
+  .contact h3 { grid-column: 1 / -1; font-size: 16pt; }
+  .contact .item { font-size: 7.6pt; line-height: 1.55; color: #DBD7CE; }
+  .contact .item b { display: block; font-size: 6.2pt; letter-spacing: 0.22em; text-transform: uppercase; color: var(--blue); font-weight: 500; margin-bottom: 1.2mm; }
+  .contact a { color: var(--white); text-decoration: none; }
+
+  .colophon { font-size: 6.6pt; letter-spacing: 0.2em; text-transform: uppercase; color: var(--grey); text-align: center; }
+
+  .grow { flex: 1; }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     PAGE 1: COVER
+     ============================================================ -->
+<section class="page">
+  <div class="cover__img">
+    <img src="photos/f00-hero-front-quarter.png" alt="912R finished, front three-quarter on a walled lane, ducktail and flared arches">
+  </div>
+  <div class="cover__body">
+    <div>
+      <p class="cover__marque">Porsche &middot; 912 &middot; 1965</p>
+      <h1 class="cover__title">912<em>R</em></h1>
+      <p class="cover__sub">Seven years. One pair of hands. Half a Porsche made again from flat sheet, on a jig built to the factory blueprints, around an engine taken from 1.6 litres to 2.0.</p>
+    </div>
+
+    <div class="cover__facts">
+      <div><span>Built</span>1965</div>
+      <div><span>Engine</span>2.0 litres, from 1.6</div>
+      <div><span>In build</span>Seven years</div>
+      <div><span>Chassis</span>452&thinsp;279</div>
+    </div>
+
+    <div class="cover__foot">
+      <p>
+        <strong style="font-weight:500;color:var(--white)">De Caires Classics</strong><br>
+        Car in the United Kingdom<br>
+        info@decairesclassics.com
+      </p>
+      <div class="cover__stamp">
+        <span>Press pack</span>
+        <p style="margin-top:1.5mm">Interview and the full<br>40-page restoration dossier<br>available on request</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PAGE 2: THE STORY
+     ============================================================ -->
+<section class="page">
+  <div class="head">
+    <p class="eyebrow">The story</p>
+    <h2>What the carpets<br>were hiding</h2>
+    <p class="standfirst">A good deal on a tidy-looking 912. Then the interior came out.</p>
+  </div>
+
+  <div class="pad cols" style="margin-top:6mm">
+    <div>
+      <p class="lead drop">It arrived red, the colour it had worn since New York: trimmed inside, carpets down, underside painted, nothing to alarm anyone standing back from it. That impression lasted exactly as long as it took to start taking things out.</p>
+      <p style="margin-top:2.5mm">Underneath, the shell had rusted down. Roughly the lower half of the car would have to be remade, not repaired but remade. The engine was seized with a failed piston, and the three-piece alloy crankcase everything else bolts to was cracked. The original wiring loom was found burnt through, cooked by its own charging feed. Half the cooling tinware was simply missing.</p>
+      <p>Honestly, it was a job large enough that selling the project on was, for a moment, the reasonable option. It was kept instead. A jig was built first, so that every suspension point sat exactly where Porsche's blueprints said it should, and only then did the cutting begin. The upper body survived. From the waist down, most of this car is metal that did not exist in 2019, much of it formed by hand in an English workshop.</p>
+      <p>Seven years later the crankcase has been specialist-welded and re-plumbed for better oil circulation, and the engine around it is 2.0 litres instead of 1.6 and almost entirely new: CNC-machined heads, racing pistons, Carrillo rods, twin Weber 44&nbsp;IDFs. The capacity is the point: size buys torque low down where a wilder camshaft would only buy revs, so the car pulls from little and stays docile in traffic. 2.0 litres is also what Porsche gave the 911 of 1965, here with two fewer cylinders behind the rear axle. The gearbox was stripped to the last bearing and built again, and the loom made from nothing, one wire at a time. Under flared arches and a ducktail, the paint is Crystal Blue, a Porsche special-order colour.</p>
+
+      <div class="quote" style="margin-top:5mm">
+        <p>The car outside didn't look that bad. But when I started taking things out, I found what they were hiding. It was really bad.</p>
+        <cite>Umberto De Caires</cite>
+      </div>
+    </div>
+
+    <aside class="sidebar">
+      <h4>Six angles<br>for a feature</h4>
+      <ol>
+        <li><b>One pair of hands.</b> Fabrication, engine, gearbox, loom, trim decisions: almost all of it done by one man over seven years.</li>
+        <li><b>A jig, then a shell.</b> Built from Porsche's own blueprints so that every suspension point sat true before a single panel was cut away. Roughly 30 percent of the replacement metal was then made by hand.</li>
+        <li><b>The case that should have ended it.</b> A cracked three-piece crankcase is where most of these engines stop. This one was welded by specialists and its oil circulation redesigned, so the cause went with the symptom.</li>
+        <li><b>The 912 argument.</b> Less weight behind the rear axle, sharper balance. The case for the cheap Porsche being the better-handling one.</li>
+        <li><b>Parts that no longer exist.</b> Unobtainable small fittings, modelled and 3D-printed in the workshop, then finished to match.</li>
+        <li><b>The next dream.</b> To 3D-scan a 1950s Formula 1 car in a museum and build one from scratch, because a car like that cannot be bought, only made.</li>
+      </ol>
+    </aside>
+  </div>
+
+  <div class="grow"></div>
+
+  <div class="pad strip2" style="padding-bottom:11mm">
+    <figure>
+      <div style="height:39mm"><img src="photos/w02-floor-rotted.jpg" alt="The floor of the 912 rotted through, pipework still clipped to what was left"></div>
+      <figcaption><b>As found</b><br>The floor had gone altogether, with the pipework still clipped to what was left of it. Roughly the bottom half of the car was in this condition.</figcaption>
+    </figure>
+    <figure>
+      <div style="height:39mm"><img src="photos/w12-shell-primer-front.jpg" alt="The 912 shell in primer inside a spray tent" style="object-position:50% 42%"></div>
+      <figcaption><b>Halfway</b><br>The shell in primer, six years later. From the waist down, most of this metal is new, and much of it was shaped by hand.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============================================================
+     PAGE 3: THE CAR NOW
+     ============================================================ -->
+<section class="page">
+  <div class="bleed" style="height:96mm">
+    <img src="photos/f14-engine-bay.jpg" alt="The finished engine bay: twin Weber 44 IDF carburettors under K&N filters, quilted leather firewall panel" style="object-position:50% 45%">
+    <figcaption><b>Finished</b> &nbsp; 2.0 litres, twin Weber 44&nbsp;IDFs, and a quilted leather firewall where most builders leave bare metal.</figcaption>
+  </div>
+
+  <div class="pad" style="padding-top:8mm">
+    <p class="eyebrow">The car now</p>
+    <h2 style="margin-top:2.5mm">2.0 litres, a new shell,<br>and every bearing renewed</h2>
+  </div>
+
+  <div class="pad" style="margin-top:6mm">
+    <div class="numbers">
+      <div><p class="n">1965</p><p class="l">Build year</p></div>
+      <div><p class="n">2.0</p><p class="l">Litres, from 1.6</p></div>
+      <div><p class="n">7</p><p class="l">Years in build</p></div>
+      <div><p class="n">452&thinsp;279</p><p class="l">Chassis, body, papers</p></div>
+    </div>
+  </div>
+
+  <div class="pad strip2" style="margin-top:7mm">
+    <figure>
+      <div style="height:52mm"><img src="photos/f12-cabin-driver-side.jpg" alt="The cabin: Scottish tweed door card, orange Alcantara seat, drilled blue alloy floor"></div>
+      <figcaption><b>Finished</b><br>From the driver's seat: a trimmed door card, and an aluminium floor drilled and laid over Dynamat in place of carpet. The cloth is a Scottish tweed, the trim orange Alcantara.</figcaption>
+    </figure>
+    <figure>
+      <div style="height:52mm"><img src="photos/f11-rear-seats-harness.jpg" alt="Rear seats remade in tweed and orange Alcantara with four-point harnesses"></div>
+      <figcaption><b>Finished</b><br>The tiny rear seats, remade in the same materials, with four-point harnesses on a discreet reinforcement bar cut into the shell. No cage: it was never meant to be a track car.</figcaption>
+    </figure>
+  </div>
+
+  <div class="grow"></div>
+
+  <div class="pad spec" style="padding-bottom:12mm">
+    <dl>
+      <div class="row"><dt>Engine</dt><dd>Air-cooled flat four, 2.0 litres</dd></div>
+      <div class="row"><dt>Crankcase</dt><dd>Original alloy, specialist-welded</dd></div>
+      <div class="row"><dt>Heads</dt><dd>CNC-machined, Swiss-sourced</dd></div>
+      <div class="row"><dt>Internals</dt><dd>Racing pistons, Carrillo rods</dd></div>
+      <div class="row"><dt>Induction</dt><dd>Twin Weber 44&nbsp;IDF, K&amp;N filters</dd></div>
+      <div class="row"><dt>Gearbox</dt><dd>Rebuilt, every bearing renewed</dd></div>
+    </dl>
+    <dl>
+      <div class="row"><dt>Body</dt><dd>Steel shell rebuilt on a jig</dd></div>
+      <div class="row"><dt>Panels</dt><dd>Glassfibre, carbon-fibre reinforced</dd></div>
+      <div class="row"><dt>Arches</dt><dd>Flared rear wings, RSR in spirit</dd></div>
+      <div class="row"><dt>Suspension</dt><dd>Rebuilt, 80% polyurethane bushes</dd></div>
+      <div class="row"><dt>Lights</dt><dd>356 units modified, clear glass</dd></div>
+      <div class="row"><dt>Electrics</dt><dd>New loom, built by hand</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============================================================
+     PAGE 4: DETAILS + PRESS INFORMATION
+     ============================================================ -->
+<section class="page">
+  <div class="bleed" style="height:62mm">
+    <img src="photos/f04-rear-straight.jpg" alt="912R from directly behind: ducktail, PORSCHE script, leather deck straps and a single stainless tailpipe" style="object-position:50% 56%">
+  </div>
+
+  <div class="pad" style="padding-top:8mm">
+    <p class="eyebrow">Three details worth a paragraph</p>
+    <hr class="rule rule--blue" style="margin:3mm 0 5mm">
+    <div class="details">
+      <div>
+        <p class="kicker">Honesty</p>
+        <h3>A new plate, so the old one isn't lying</h3>
+        <p>The original Karmann body plate carries Farbton 6608. The car is now Farbton 6825. Rather than leave a plate that contradicted the car, a new one was made to the factory pattern, same body number, new paint number, and the original kept with the car.</p>
+      </div>
+      <div>
+        <p class="kicker">Resourcefulness</p>
+        <h3>Headlamps borrowed from a 356</h3>
+        <p>The clear-glass lamps he wanted are no longer made, and the standard 912 lenses were not to his taste. So 356 units were modified to fit the 912's holders: clear glass, the pattern set inside, exactly the look intended.</p>
+      </div>
+      <div>
+        <p class="kicker">Foresight</p>
+        <h3>Spare wires, run before the loom went in</h3>
+        <p>The burnt original was replaced by a loom built from nothing, one wire at a time. Unused wires were run inside the car while it was open, so anything added later can be fed cleanly rather than taped along the outside.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pad" style="margin-top:6mm; flex:none">
+    <hr class="rule" style="margin-bottom:5mm">
+    <div class="maker">
+      <div class="maker__img">
+        <img src="photos/u01-umberto-portrait.jpg" alt="Umberto De Caires, who built 912R" style="object-position:50% 30%">
+      </div>
+      <div>
+        <p class="kicker">The signature</p>
+        <h3>Umberto De Caires</h3>
+        <p>He grew up in his father's workshop, an aerospace engineer's bench where engines and mechanisms were taken apart until they were understood. He trained as a mechanic in Venezuela on a course built around racing, where tolerances matter and shortcuts cost races, moved into custom motorcycles, then to Italy for bodywork and paint. England came next: years of independent work on Jaguar, Porsche, Alfa Romeo, Maserati and Aston Martin. 912R was built in that English workshop, alone, over seven years.</p>
+        <p>Last month he left England for Gavorrano, in the Maremma, Italy, where De Caires Classics is opening its own garage. 912R is the car that closes one chapter and opens the next.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="grow"></div>
+
+  <div class="pad">
+    <div class="contact">
+      <h3 style="font-family:var(--display);font-weight:300">For editors</h3>
+      <div class="item">
+        <b>What is available</b>
+        The complete 40-page restoration dossier; the history file, from New York registration to UK V5C; and a full photographic record of the seven-year build, shot in the workshop as the work went on.
+      </div>
+      <div class="item">
+        <b>Photography</b>
+        There is as yet no professional photography of the finished car. A proper shoot can be arranged to suit a commission, and we would welcome a publication's own photographer.
+      </div>
+      <div class="item">
+        <b>Where the car is</b>
+        The car is in the United Kingdom, where it was built.<br>
+        UK registered, V5C held, chassis&nbsp;452&nbsp;279.
+      </div>
+      <div class="item">
+        <b>Interview</b>
+        Umberto De Caires is now in Gavorrano, in the Maremma, Italy, and is available in person there, or by phone and video. Access to the car in the UK can be arranged.
+      </div>
+      <div class="item" style="grid-column:1 / -1">
+        <b>Contact</b>
+        <a href="mailto:info@decairesclassics.com">info@decairesclassics.com</a> &middot; decairesclassics.com
+      </div>
+    </div>
+  </div>
+
+  <div class="pad" style="padding-top:6mm; padding-bottom:11mm">
+    <hr class="rule" style="margin-bottom:4mm">
+    <p class="colophon">De Caires Classics &middot; 912R Press Pack &middot; Built in England</p>
+  </div>
+</section>
+
+</body>
+</html>

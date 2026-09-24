@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>912R: A 1965 Porsche 912, Restored | De Caires Classics</title>
-<meta name="description" content="The full restoration of 912R, a 1965 Porsche 912, told and dissected system by system. De Caires Classics, Maremma, Tuscany.">
+<meta name="description" content="The full restoration of 912R, a 1965 Porsche 912, told and dissected system by system. De Caires Classics.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -118,7 +118,7 @@
     font-family: var(--display); font-style: italic;
     font-size: clamp(1.2rem, 3vw, 1.7rem); color: var(--ink-soft);
   }
-  .cover__hero { flex: 1; display: flex; margin: 2.5rem 0; }
+  .cover__hero { flex: 1; display: flex; align-items: center; margin: 2.5rem 0; max-height: 60vh; }
   .cover__foot {
     font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase;
     color: var(--ink-soft); padding-bottom: 1rem;
@@ -214,8 +214,6 @@
   }
   .callout p { font-size: 0.98rem; }
 
-  .tbc { font-style: italic; color: var(--gold); }
-
   /* --- Image plates ----------------------------------------- */
   figure { margin: 2.2rem 0; max-width: var(--measure); }
   .plate {
@@ -239,6 +237,21 @@
   .plate--historic .plate__type { background: #D8CDB6; color: #4a4438; }
   figcaption { margin-top: 0.7rem; font-size: 0.82rem; color: var(--ink-soft); font-style: italic; }
 
+  /* --- Photo plates (real photography) ----------------------- */
+  .plate--photo { padding: 0; overflow: hidden; }
+  .plate--photo img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+  .plate--historic.plate--photo img { filter: grayscale(0.55) sepia(0.18) contrast(1.02); }
+
+  .provenance { display: flex; gap: 1.2rem; align-items: flex-start; max-width: var(--measure); margin: 1.4rem 0; }
+  .provenance .plate { width: 14rem; flex: none; aspect-ratio: 16/9; }
+  .provenance p { font-size: 0.92rem; }
+  @media (max-width: 32rem) {
+    .provenance { display: block; }
+    .provenance .plate { width: 100%; margin-bottom: 0.8rem; }
+  }
+
   .figrow {
     display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;
     max-width: var(--measure); margin: 2.2rem 0;
@@ -246,6 +259,10 @@
   .figrow figure { margin: 0; }
   .figrow .plate { aspect-ratio: 1 / 1; font-size: 0.9rem; }
   @media (max-width: 30rem) { .figrow { grid-template-columns: 1fr; } }
+
+  .figrow.figrow--three { grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 40rem) { .figrow.figrow--three { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 26rem) { .figrow.figrow--three { grid-template-columns: 1fr; } }
 
   /* --- Foreword / contents ---------------------------------- */
   .foreword { margin-top: 3rem; }
@@ -267,6 +284,20 @@
   /* --- Closing ---------------------------------------------- */
   .closing { margin-top: 5rem; text-align: center; }
   .closing .rule { margin: 2rem auto; }
+
+  /* --- The maker --------------------------------------------- */
+  .maker {
+    display: flex; gap: 1.6rem; align-items: flex-start;
+    max-width: var(--measure); margin: 2.4rem 0;
+    text-align: left;
+  }
+  .maker .plate { width: 12rem; flex: none; aspect-ratio: 3/4; }
+  .maker h4 { font-size: 1.6rem; margin: 0.4rem 0 0.7rem; }
+  .maker p { font-size: 0.98rem; }
+  @media (max-width: 32rem) {
+    .maker { display: block; }
+    .maker .plate { width: 100%; aspect-ratio: 4/3; margin-bottom: 1rem; }
+  }
   .colophon {
     margin-top: 1.5rem; font-size: 0.78rem; letter-spacing: 0.05em;
     color: var(--ink-soft); line-height: 1.7;
@@ -300,12 +331,11 @@
     <h1 class="cover__title">912R</h1>
     <p class="cover__sub">A restoration, dissected</p>
     <div class="cover__hero">
-      <div class="plate plate--finished" style="width:100%; aspect-ratio:16/10;">
-        <span class="plate__type">Finished &middot; professional</span>
-        Cover hero: the finished car, front three-quarter, low evening light
+      <div class="plate plate--finished plate--photo" style="width:100%; aspect-ratio:4/3;">
+        <img src="photos/f00-hero-front-quarter.png" alt="912R finished, front three-quarter on a walled lane">
       </div>
     </div>
-    <p class="cover__foot">De Caires Classics &middot; Maremma, Tuscany</p>
+    <p class="cover__foot">De Caires Classics &middot; Built in England</p>
   </header>
 
   <!-- ============ 2. FOREWORD + CONTENTS ============ -->
@@ -316,8 +346,13 @@
     </div>
     <div class="prose">
       <p class="lead">This is the complete account of a single restoration: what the car was, what was found inside it, and every decision taken to bring it back. It is written to be read from the first page, and kept as a record of the work.</p>
-      <p style="margin-top:1.4rem;">Some cars are simply serviced and sold. This was not one of them. What began as a fair deal on a rough but promising 912 became a near-total rebuild, most of it carried out by one pair of hands. The pages that follow tell that story in order, and then take the car apart system by system so that nothing is left unsaid. Where a fact is still to be confirmed from the car's documents, it is marked <span class="tbc">to confirm</span> rather than guessed.</p>
+      <p style="margin-top:1.4rem;">Some cars are simply serviced and sold. This was not one of them. What began as a fair deal on a rough but promising 912 became a near-total rebuild, most of it carried out by one pair of hands. The pages that follow tell that story in order, and then take the car apart system by system so that nothing is left unsaid.</p>
     </div>
+
+    <figure>
+      <div class="plate plate--finished plate--photo" style="aspect-ratio:16/9;"><span class="plate__type">Finished</span><img src="photos/f07-front-workshop.jpg" alt="912R facing the camera in the workshop where it was built"></div>
+      <figcaption>912R in the workshop where it was built, on the day the last panels went back on.</figcaption>
+    </figure>
 
     <div class="contents">
       <h3>What follows</h3>
@@ -337,7 +372,9 @@
         <li>The engine bay, finished</li>
         <li>Character and faithfulness</li>
         <li>The hardest parts</li>
+        <li>Where it came from</li>
         <li>Full specification</li>
+        <li>The man who built it</li>
         <li>For the next owner</li>
       </ol>
     </div>
@@ -376,10 +413,12 @@
 
     <div class="figrow">
       <figure>
-        <div class="plate plate--historic"><span class="plate__type">Original / period</span>The car as bought, before work</div>
+        <div class="plate plate--historic plate--photo"><span class="plate__type">As found</span><img src="photos/w03-engine-bay-asfound.jpg" alt="The flat-four in the engine bay of the red car, as found"></div>
+        <figcaption>The flat-four as it sat when the car arrived, generator and oil filter still in place.</figcaption>
       </figure>
       <figure>
-        <div class="plate plate--finished"><span class="plate__type">Finished</span>The Porsche badge, restored</div>
+        <div class="plate plate--finished plate--photo"><span class="plate__type">Finished</span><img src="photos/f02-front-crest.jpg" alt="The finished car head-on: crest, twin headlamps and leather bonnet straps"></div>
+        <figcaption>The same car today: crest, twin headlamps, leather bonnet straps.</figcaption>
       </figure>
     </div>
   </section>
@@ -392,8 +431,9 @@
       <p class="section__standfirst">Sound to the eye, and almost gone beneath.</p>
     </div>
     <div class="prose">
-      <p>The car flattered to deceive. The interior was in place, carpets and all, and the underside had been painted, so at a glance it looked like a manageable project. That impression lasted precisely as long as it took to start taking things out.</p>
+      <p>The car flattered to deceive. It arrived red, the colour it had worn since New York; the interior was in place, carpets and all, and the underside had been painted, so at a glance it looked like a manageable project. That impression lasted precisely as long as it took to start taking things out.</p>
       <p>Underneath, the shell had rusted down. Roughly the lower half of the car would have to be remade. It was, honestly, a job large enough that at one point the reasonable option was to sell the project on rather than see it through. It was kept. The compensation, beyond the finished car, was a deep and lasting understanding of how these bodies are built, knowledge that carries straight across to the 911, since the two share the same structure.</p>
+      <p>It is worth saying plainly what all of this means for the car today. Nothing described on this page was patched over or disguised. Where metal had gone it was cut out entirely and replaced, on a jig set to the factory blueprints, so the corrosion left the car with the panels that carried it. A shell this far gone had to be rebuilt rather than tidied, which is precisely why so much of this car is now new steel, correctly located, with nothing old sealed in behind it to be discovered later. The condition set out here belongs wholly to the car that arrived in 2019; all that survives of it is these photographs.</p>
     </div>
 
     <ul class="details">
@@ -411,12 +451,19 @@
       <cite>Umberto</cite>
     </blockquote>
 
+    <div class="callout">
+      <h4>What the condition on arrival means now</h4>
+      <p>Every item in the list above was answered by replacement rather than repair: the floors, sills and lower body remade in new steel over a jig built to Porsche's blueprints; the engine rebuilt around a specialist-welded case with its oil circulation improved; the burnt loom discarded and a new one made by hand. None of it is inherited by the next owner. The work a car of this age eventually asks for has been done here, once and completely, and photographed at every stage; the pages that follow are the record of it.</p>
+    </div>
+
     <div class="figrow">
       <figure>
-        <div class="plate plate--historic"><span class="plate__type">Original state</span>Corrosion in the floor and lower body, stripped</div>
+        <div class="plate plate--historic plate--photo"><span class="plate__type">As found</span><img src="photos/w01-floor-corrosion.jpg" alt="Corrosion through the floor and inner sill, as found"></div>
+        <figcaption>Corrosion through the floor and inner sill, once the carpets came out.</figcaption>
       </figure>
       <figure>
-        <div class="plate plate--historic"><span class="plate__type">Working step</span>The bare shell, ready for the jig</div>
+        <div class="plate plate--historic plate--photo"><span class="plate__type">As found</span><img src="photos/w02-floor-rotted.jpg" alt="A floor section rotted through, with pipework still clipped in place"></div>
+        <figcaption>Elsewhere the floor had gone altogether, with the pipework still clipped to what was left of it.</figcaption>
       </figure>
     </div>
   </section>
@@ -432,16 +479,16 @@
       <p>The first task was not to cut, but to hold. A jig was built so that every suspension point sat exactly where Porsche intended, using the factory blueprints as the reference. With the car locked to a structure known to be true, the new metal could be formed around it with confidence. Only then did the cutting begin. The upper body survived; from the waist down, most of the shell was remade.</p>
 
       <h4>Panel by panel</h4>
-      <p>Roughly seventy percent of the replacement panels were bought in. The remainder were fabricated by hand, and throughout, as much original metal was saved as could honestly be kept. Where weight could be removed, it was: several outer panels are carbon fibre, reinforced with glassfibre, a deliberate saving on a car that was never going to be the most powerful on the road.</p>
+      <p>Roughly seventy percent of the replacement panels were bought in. The remainder were fabricated by hand, and throughout, as much original metal was saved as could honestly be kept. Where weight could be removed, it was: several outer panels are glassfibre, reinforced with carbon fibre, a deliberate saving on a car that was never going to be the most powerful on the road.</p>
     </div>
 
     <table class="spec-table spec-table--wide">
       <caption>Bodywork, panel by panel</caption>
       <tbody>
-        <tr><th>Front wings</th><td>Carbon fibre, glassfibre reinforced <span class="tag tag--new">new</span></td></tr>
-        <tr><th>Bonnet</th><td>Carbon fibre, glassfibre reinforced <span class="tag tag--new">new</span></td></tr>
-        <tr><th>Both bumpers</th><td>Carbon fibre, glassfibre reinforced <span class="tag tag--new">new</span></td></tr>
-        <tr><th>Deck lid</th><td>Carbon fibre, glassfibre reinforced <span class="tag tag--new">new</span></td></tr>
+        <tr><th>Front wings</th><td>Glassfibre, carbon-fibre reinforced <span class="tag tag--new">new</span></td></tr>
+        <tr><th>Bonnet</th><td>Glassfibre, carbon-fibre reinforced <span class="tag tag--new">new</span></td></tr>
+        <tr><th>Both bumpers</th><td>Glassfibre, carbon-fibre reinforced <span class="tag tag--new">new</span></td></tr>
+        <tr><th>Deck lid</th><td>Glassfibre, carbon-fibre reinforced <span class="tag tag--new">new</span></td></tr>
         <tr><th>Doors</th><td>Original doors repaired, fitted with new outer skins <span class="tag tag--uprated">repaired</span></td></tr>
         <tr><th>Rear wings</th><td>Two new wings, flared over the rear wheels, RSR in spirit <span class="tag tag--new">new</span></td></tr>
         <tr><th>Floor / lower body</th><td>Largely fabricated by hand over the jig <span class="tag tag--new">rebuilt</span></td></tr>
@@ -460,36 +507,68 @@
       <cite>Umberto</cite>
     </blockquote>
 
-    <div class="figrow">
+    <div class="figrow figrow--three">
       <figure>
-        <div class="plate plate--historic"><span class="plate__type">Working step</span>The jig, with fabricated floor sections in place</div>
+        <div class="plate plate--historic plate--photo"><span class="plate__type">Working step</span><img src="photos/w10-shell-primer-tent.jpg" alt="The rebuilt shell in primer, on its frame in the spray tent"></div>
+        <figcaption>The rebuilt shell in primer, on its frame in the spray tent.</figcaption>
       </figure>
       <figure>
-        <div class="plate plate--finished"><span class="plate__type">Finished</span>The flared rear arch and relocated filler</div>
+        <div class="plate plate--historic plate--photo"><span class="plate__type">Working step</span><img src="photos/w08-arch-flare-primer.jpg" alt="The flared rear arch shaped, in filler and primer"></div>
+        <figcaption>The rear arch flared and shaped, in filler and primer.</figcaption>
+      </figure>
+      <figure>
+        <div class="plate plate--historic plate--photo"><span class="plate__type">Working step</span><img src="photos/w09-ducktail-primer.jpg" alt="The ducktail deck lid fitted to the primed shell"></div>
+        <figcaption>The ducktail deck lid, fitted to the primed shell.</figcaption>
       </figure>
     </div>
+
+    <figure>
+      <div class="plate plate--finished plate--photo"><span class="plate__type">Finished</span><img src="photos/f04-rear-straight.jpg" alt="The finished car from behind: flared arches, ducktail deck lid, PORSCHE script"></div>
+      <figcaption>The same shapes, finished: flared arches, ducktail deck lid, and the single centre exhaust below the valance.</figcaption>
+    </figure>
   </section>
 
   <!-- ============ 6. PAINT ============ -->
   <section class="section">
     <div class="section__head">
-      <p class="eyebrow">04 &middot; Colour</p>
-      <h2 class="section__title">A blue that had to be asked for</h2>
+      <p class="eyebrow">04 &middot; Paint and identity</p>
+      <h2 class="section__title">A plate that matches the car</h2>
     </div>
     <div class="prose">
       <p>The blue is a genuine Porsche factory colour, not an invention. It is not strictly correct to a 1965 car: this is an early example, and the shade entered the catalogue roughly two years later. But it remains a period 912 colour, and it is exactly the kind of colour that, then as now, was a paid-for special order rather than a standard choice. That small extravagance suits the car.</p>
+      <p>The car did not arrive blue. It arrived red, as its American registration recorded and as the early photographs show, though its original Karmann body plate carries the number for a blue, Farbton 6608. Rather than leave the plate contradicting the car, a new Karmann plate was made to the same pattern, carrying the same body number and the new paint number: a small, careful piece of honesty, and the sort of detail that tends to be skipped.</p>
     </div>
     <table class="spec-table">
       <tbody>
         <tr><th>Origin</th><td>Genuine Porsche factory colour, special order</td></tr>
         <tr><th>Period</th><td>A 912-era colour, roughly two years later than this car's build</td></tr>
-        <tr><th>Name / code</th><td><span class="tbc">to confirm</span></td></tr>
+        <tr><th>Name / mix</th><td>Crystal Blue, mixed by Glasurit</td></tr>
+        <tr><th>Paint number now</th><td>Farbton 6825, on the current body plate</td></tr>
+        <tr><th>Paint number as built</th><td>Farbton 6608, on the original body plate (a blue)</td></tr>
+        <tr><th>Body number</th><td>Karmann 452&nbsp;279, matching the chassis</td></tr>
       </tbody>
     </table>
-    <figure>
-      <div class="plate plate--finished"><span class="plate__type">Finished &middot; professional</span>Body panel in raking light, showing the blue and the finish</div>
-      <figcaption>Colour detail. A reflection shot conveys the depth of the paint better than a flat elevation.</figcaption>
-    </figure>
+
+    <div class="figrow">
+      <figure>
+        <div class="plate plate--historic plate--photo"><span class="plate__type">Original plate</span><img src="photos/p01-karmann-plate-original.jpg" alt="The original Karmann body plate: number 452279, Farbton 6608"></div>
+        <figcaption>The original Karmann plate, removed and kept: body number 452&nbsp;279, Farbton 6608.</figcaption>
+      </figure>
+      <figure>
+        <div class="plate plate--finished plate--photo"><span class="plate__type">Fitted now</span><img src="photos/p02-karmann-plate-new.jpg" alt="The new Karmann body plate: number 452279, Farbton 6825"></div>
+        <figcaption>Its replacement on the car today: the same body number, the new Farbton 6825.</figcaption>
+      </figure>
+    </div>
+    <div class="figrow">
+      <figure>
+        <div class="plate plate--historic plate--photo"><span class="plate__type">Working step</span><img src="photos/f08-rear-script-masked.jpg" alt="The rear panel masked with tape, the PORSCHE lettering set out"></div>
+        <figcaption>The rear panel masked off, the PORSCHE lettering set out in tape before it was laid on.</figcaption>
+      </figure>
+      <figure>
+        <div class="plate plate--finished plate--photo"><span class="plate__type">Finished</span><img src="photos/f06-front-quarter-low.jpg" alt="Crystal Blue in full sun across the front wing and bonnet"></div>
+        <figcaption>The finish in full sun: its depth reads best across a curved panel.</figcaption>
+      </figure>
+    </div>
   </section>
 
   <!-- ============ 7. ENGINE ============ -->
@@ -524,22 +603,29 @@
         <tr><th>Carburettors</th><td>Twin Weber 44 IDF, larger than standard <span class="tag tag--new">new</span></td></tr>
         <tr><th>Clutch</th><td>Uprated, balanced <span class="tag tag--uprated">uprated</span></td></tr>
         <tr><th>Cooling tinware</th><td>Missing air-guide panels replaced <span class="tag tag--new">new</span></td></tr>
-        <tr><th>Engine number</th><td><span class="tbc">to confirm</span></td></tr>
+        <tr><th>Engine number</th><td>746389</td></tr>
       </tbody>
     </table>
 
     <blockquote class="quote">
-      <p>Practically the engine inside is all new. The only thing that isn't new is the crankshaft, and the crankshaft was good.</p>
+      <p>Practically the engine inside is all new. The only thing that isn't new is the crankshaft, as the crankshaft was in good condition.</p>
       <cite>Umberto</cite>
     </blockquote>
 
     <div class="figrow">
       <figure>
-        <div class="plate plate--historic"><span class="plate__type">Working step</span>The engine stripped: seized piston, cracked case</div>
+        <div class="plate plate--historic plate--photo"><span class="plate__type">As found</span><img src="photos/w04-engine-out.jpg" alt="The original flat-four lifted out of the car, on the workshop floor"></div>
+        <figcaption>The original flat-four, lifted out: fan housing, cylinder barrels and both carburettors as they came.</figcaption>
       </figure>
       <figure>
-        <div class="plate plate--finished"><span class="plate__type">Finished &middot; professional</span>The finished engine in the bay, carburettors uppermost</div>
+        <div class="plate plate--finished plate--photo"><span class="plate__type">Finished</span><img src="photos/f14-engine-bay.jpg" alt="The finished engine in the bay, twin Weber carburettors under K and N filters"></div>
+        <figcaption>The finished engine in the bay: twin Weber 44&nbsp;IDFs under K&amp;N filters.</figcaption>
       </figure>
+    </div>
+
+    <div class="provenance">
+      <div class="plate plate--historic plate--photo"><span class="plate__type">Provenance</span><img src="photos/c06-engine-number.jpg" alt="Engine number 746389 stamped in the alloy"></div>
+      <p>Engine number <strong>746389</strong>, stamped in the alloy and visible in the finished bay, behind the crankshaft pulley.</p>
     </div>
   </section>
 
@@ -562,8 +648,10 @@
       <h4>Why a second cooler</h4>
       <p>These cars were built for open roads, not for crawling in queues for hours. The remote cooler and fan are an honest concession to how the car will be used today, there to keep the oil temperature down and protect the freshly built engine.</p>
     </div>
+
     <figure>
-      <div class="plate plate--finished"><span class="plate__type">Finished &middot; professional</span>Engine bay detail: Weber carburettors, K&amp;N filters, coolers and stainless exhaust</div>
+      <div class="plate plate--finished plate--photo"><span class="plate__type">Finished &middot; detail</span><img src="photos/c05-carbs-filters.jpg" alt="One of the Weber carburettors under its K and N filter, with coil and HT leads"></div>
+      <figcaption>One of the twin Webers under its K&amp;N filter, coil and HT leads alongside.</figcaption>
     </figure>
   </section>
 
@@ -582,7 +670,7 @@
       <caption>Suspension and brakes</caption>
       <tbody>
         <tr><th>Bushes</th><td>Around 80 percent polyurethane, firmer, for sharper handling <span class="tag tag--new">new</span></td></tr>
-        <tr><th>Dampers</th><td>Four new dampers, all round <span class="tag tag--new">new</span></td></tr>
+        <tr><th>Dampers</th><td>Four new Koni dampers, all round <span class="tag tag--new">new</span></td></tr>
         <tr><th>Torsion bars</th><td>Original, checked good and kept (a low-stress part) <span class="tag tag--kept">retained</span></td></tr>
         <tr><th>Trailing arms</th><td>Original, powder-coated; one front lower arm replaced <span class="tag tag--kept">retained</span></td></tr>
         <tr><th>Brake calipers</th><td>New <span class="tag tag--new">new</span></td></tr>
@@ -609,10 +697,12 @@
 
     <div class="figrow">
       <figure>
-        <div class="plate plate--historic"><span class="plate__type">Working step</span>The gearbox apart: bearings and gears laid out</div>
+        <div class="plate plate--historic plate--photo"><span class="plate__type">As found</span><img src="photos/w07-gearbox-asfound.jpg" alt="The gearbox as it came out of the car, dirty and unopened"></div>
+        <figcaption>The gearbox as it came out of the car.</figcaption>
       </figure>
       <figure>
-        <div class="plate plate--finished"><span class="plate__type">Finished</span>A rebuilt, powder-coated suspension corner</div>
+        <div class="plate plate--finished plate--photo"><span class="plate__type">Finished</span><img src="photos/f09-gearbox-rebuilt.jpg" alt="The rebuilt gearbox on a stand, ready to refit"></div>
+        <figcaption>Rebuilt and back on the stand, every bearing renewed, ready to go in.</figcaption>
       </figure>
     </div>
   </section>
@@ -634,7 +724,8 @@
       </tbody>
     </table>
     <figure>
-      <div class="plate plate--finished"><span class="plate__type">Finished &middot; professional</span>Wheel and flared arch, three-quarter low angle</div>
+      <div class="plate plate--finished plate--photo"><span class="plate__type">Finished &middot; detail</span><img src="photos/c01-rear-wheel-flare.jpg" alt="A rear wheel under the flared arch"></div>
+      <figcaption>A rear wheel and the flared arch it sits under.</figcaption>
     </figure>
   </section>
 
@@ -642,7 +733,7 @@
   <section class="section">
     <div class="section__head">
       <p class="eyebrow">09 &middot; Interior</p>
-      <h2 class="section__title">Blue, orange, and Scottish tweed</h2>
+      <h2 class="section__title">The cabin, remade to a plan</h2>
       <p class="section__standfirst">Where the car stops being a restoration and becomes a personal statement.</p>
     </div>
     <div class="prose">
@@ -656,7 +747,7 @@
       <p>There is no carpet. The blue floor is left deliberately visible, dressed with aluminium mats painted blue to match. Hidden beneath sits Dynamat sound-deadening for the noise and vibration an aluminium-and-steel car will make. The front footwells are lined with aluminium panels and covered in a black diamond-pattern vinyl, so everything the eye reaches is tidy.</p>
 
       <h4>Dashboard and instruments</h4>
-      <p>A new lower dashboard section was made, with a band of the same tweed running across it around the ignition and the lighter, in place of the original aluminium trim, simply because it looks better. This was a three-gauge car; two gauges were added, oil pressure and charging, the two worth watching.</p>
+      <p>A new lower dashboard section was made, with a band of the same cloth running across it around the ignition and the lighter, in place of the original aluminium trim, simply because it looks better. This was a three-gauge car; two gauges were added, oil pressure and charging, the two worth watching.</p>
 
       <h4>The steering wheel</h4>
       <p>It arrived with an unattractive Momo wheel. An original was found but set aside as too large at 40cm. A 38cm was tried, and finally the current wheel chosen: a deep-dish four-spoke that brings the rim toward the driver for a more purposeful position, yet stays close in look to the original four-spoke, so the cabin keeps its period character.</p>
@@ -676,11 +767,10 @@
         <tr><th>Footwells</th><td>Aluminium panels, black diamond-pattern vinyl</td></tr>
         <tr><th>Door panels</th><td>Made in aluminium</td></tr>
         <tr><th>Rear panels</th><td>Made to cover the rear seat area</td></tr>
-        <tr><th>Dashboard</th><td>New lower section with a tweed band</td></tr>
+        <tr><th>Dashboard</th><td>New lower section with a cloth band</td></tr>
         <tr><th>Instruments</th><td>Original three, plus added oil-pressure and charging gauges</td></tr>
         <tr><th>Steering wheel</th><td>Deep-dish four-spoke, original in character</td></tr>
         <tr><th>Woodwork</th><td>Hardwood gear knob and matching heater knob</td></tr>
-        <tr><th>Material suppliers</th><td><span class="tbc">to confirm, if to be credited</span></td></tr>
       </tbody>
     </table>
 
@@ -689,18 +779,18 @@
       <cite>Umberto</cite>
     </blockquote>
 
-    <div class="figrow">
+    <div class="figrow figrow--three">
       <figure>
-        <div class="plate plate--finished"><span class="plate__type">Finished &middot; professional</span>Cabin, wide: seats, harness, floor and dash together</div>
+        <div class="plate plate--finished plate--photo"><span class="plate__type">Finished</span><img src="photos/f12-cabin-driver-side.jpg" alt="Driver's side interior: four-spoke wheel, tweed door card, orange Alcantara seat, drilled alloy floor"></div>
+        <figcaption>From the driver's seat: the two added gauges on their cloth panel, the trimmed door card, and the drilled alloy floor.</figcaption>
       </figure>
       <figure>
-        <div class="plate plate--finished"><span class="plate__type">Finished</span>The tweed band across the dashboard</div>
+        <div class="plate plate--finished plate--photo"><span class="plate__type">Finished</span><img src="photos/f11-rear-seats-harness.jpg" alt="Rear seats in tweed and Alcantara with four-point harnesses"></div>
+        <figcaption>The rear seats and panels, remade in the same materials, with the four-point harnesses over them.</figcaption>
       </figure>
       <figure>
-        <div class="plate plate--finished"><span class="plate__type">Finished</span>Orange Alcantara and tweed, seat detail</div>
-      </figure>
-      <figure>
-        <div class="plate plate--finished"><span class="plate__type">Finished</span>Hardwood gear knob</div>
+        <div class="plate plate--historic plate--photo"><span class="plate__type">Working step</span><img src="photos/w11-alloy-floor-mats.jpg" alt="Drilled aluminium floor panel and pedal-box panel being fitted"></div>
+        <figcaption>The drilled aluminium floor and pedal-box panels, made and fitted before trimming began.</figcaption>
       </figure>
     </div>
   </section>
@@ -719,9 +809,20 @@
       <li><strong>Frames:</strong> door glass frames and rear quarter window frames removed and powder-coated.</li>
       <li><strong>Mirror:</strong> a single mirror on the driver's side, where it is needed to overtake, a new part of the correct old type, on a car that arrived with none.</li>
     </ul>
-    <figure>
-      <div class="plate plate--finished"><span class="plate__type">Finished</span>Driver's mirror and refreshed glass surround</div>
-    </figure>
+    <div class="figrow figrow--three">
+      <figure>
+        <div class="plate plate--historic plate--photo"><span class="plate__type">As found</span><img src="photos/w06-windscreen-removed.jpg" alt="The original windscreen removed and laid on the floor, dealer sticker in the corner"></div>
+        <figcaption>The original screen, out of the car, its Californian dealer sticker still in the corner.</figcaption>
+      </figure>
+      <figure>
+        <div class="plate plate--finished plate--photo"><span class="plate__type">Finished</span><img src="photos/f13-nose-mirror.jpg" alt="The driver's-side wing mirror on the finished car"></div>
+        <figcaption>The single mirror, on the driver's wing, where it is needed to overtake.</figcaption>
+      </figure>
+      <figure>
+        <div class="plate plate--finished plate--photo"><span class="plate__type">Finished</span><img src="photos/f10-glass-quarter.jpg" alt="Door glass and rear quarter light in new rubbers and refinished frames"></div>
+        <figcaption>Door glass and rear quarter light, in new rubbers and refinished frames.</figcaption>
+      </figure>
+    </div>
   </section>
 
   <!-- ============ 13. LIGHTS ============ -->
@@ -738,12 +839,18 @@
       <li><strong>Front indicators and surrounds:</strong> restored, frames powder-coated in their silver finish.</li>
       <li><strong>Rear lights:</strong> housing the stop, reverse and indicator functions; powder-coated, with new lenses and bulbs.</li>
     </ul>
+    <div class="callout">
+      <h4>And where nothing could be adapted, it was printed</h4>
+      <p>The headlights show the method, but some parts did not leave even that option. A handful of the small fittings a 912 needs are no longer made and no longer turn up, at any price. Rather than accept a wrong-looking substitute or leave a gap, those pieces were measured, modelled and 3D-printed in the workshop, then finished so that they read as part of the car. It is a tool from this decade used to keep a 1965 Porsche correct, and it is the reason the car is complete rather than nearly complete.</p>
+    </div>
     <div class="figrow">
       <figure>
-        <div class="plate plate--finished"><span class="plate__type">Finished &middot; professional</span>The modified 356 headlight, clear glass</div>
+        <div class="plate plate--finished plate--photo"><span class="plate__type">Finished &middot; detail</span><img src="photos/c02-headlamp.jpg" alt="The modified 356 headlamp with clear glass and alloy rim"></div>
+        <figcaption>The modified 356 headlamp: clear glass, the pattern set inside, in a plain alloy rim.</figcaption>
       </figure>
       <figure>
-        <div class="plate plate--finished"><span class="plate__type">Finished</span>Rear light cluster, new lenses</div>
+        <div class="plate plate--finished plate--photo"><span class="plate__type">Finished &middot; detail</span><img src="photos/c03-tail-light.jpg" alt="A rear light cluster with new lenses beside the leather deck strap"></div>
+        <figcaption>A rear cluster on new lenses, beside the leather deck strap and the end of the PORSCHE script.</figcaption>
       </figure>
     </div>
   </section>
@@ -765,7 +872,8 @@
       <li><strong>Switchgear:</strong> a different hazard switch; fan switch hidden; dash kept clean.</li>
     </ul>
     <figure>
-      <div class="plate plate--historic"><span class="plate__type">Working step</span>The new loom laid out during the rewire</div>
+      <div class="plate plate--historic plate--photo"><span class="plate__type">As found</span><img src="photos/w05-loom-asfound.jpg" alt="The original wiring loom and fuse box in the car, before removal"></div>
+      <figcaption>The original loom and fuse box, photographed in the car before every wire of it was made again by hand.</figcaption>
     </figure>
   </section>
 
@@ -776,11 +884,9 @@
       <h2 class="section__title">Tidy where no one has to look</h2>
     </div>
     <div class="prose">
-      <p>Because the cabin has no carpet, the firewall behind the rear seats is left visible from inside. Before the engine went back in, the engine-bay face of that firewall was insulated with Dynamat pads and then covered with a leather panel in a diamond pattern, hiding the deadening and making the bay read as tidily as the cabin. It is finishing applied where most builders would leave bare metal.</p>
+      <p>Because the cabin has no carpet, the firewall behind the rear seats is left visible from inside. Before the engine went back in, the engine-bay face of that firewall was insulated with Dynamat pads and then covered with a leather panel in a diamond pattern, hiding the deadening and making the bay read as tidily as the cabin. It is finishing applied where most builders would leave bare metal, and it is the last thing anyone would think to check.</p>
+      <p>The same discipline runs through the bay. The cooling tinware that directs air over the engine was completed rather than approximated, the fuel lines and the second cooler's plumbing were routed to be reached, and the wiring behind the panel is the new loom, not a patch on the old one.</p>
     </div>
-    <figure>
-      <div class="plate plate--finished"><span class="plate__type">Finished &middot; professional</span>Diamond-pattern leather panel across the engine-bay firewall</div>
-    </figure>
   </section>
 
   <!-- ============ 16. CHARACTER ============ -->
@@ -792,7 +898,7 @@
     </div>
     <div class="prose">
       <p>The honest answer is: a long way, and yet not at all. The engine and the interior are transformed. But the upgrades do not change how the car reads. The body is little altered beyond the rear flares, the slightly fuller tyres and the deck lid, and every one of those belongs to the vocabulary of period racing, nothing that was not done in the day.</p>
-      <p>The interior is the largest departure, and only in its colour; in spirit, the tweed and the palette are chosen in the idiom of the era. The dashboard is kept close to original, and the steering wheel, though different, stays a clear relative of the factory wheel. Nothing about the car feels like this decade. It carries the feeling of a 1960s and 1970s car, which was the whole intention. It will simply be faster.</p>
+      <p>The interior is the largest departure, and only in its colour; in spirit, the cloth and the palette are chosen in the idiom of the era. The dashboard is kept close to original, and the steering wheel, though different, stays a clear relative of the factory wheel. Nothing about the car feels like this decade. It carries the feeling of a 1960s and 1970s car, which was the whole intention. It will simply be faster.</p>
     </div>
     <table class="spec-table spec-table--wide">
       <caption>Retained and changed</caption>
@@ -807,7 +913,8 @@
       <cite>Umberto</cite>
     </blockquote>
     <figure>
-      <div class="plate plate--finished"><span class="plate__type">Finished &middot; professional</span>Full-car beauty shot, side profile</div>
+      <div class="plate plate--finished plate--photo"><span class="plate__type">Finished</span><img src="photos/f03-rear-quarter-sun.jpg" alt="912R, rear three-quarter in sunlight, whole car"></div>
+      <figcaption>Recognisably a 912, and nothing like the car that arrived.</figcaption>
     </figure>
   </section>
 
@@ -825,14 +932,50 @@
       <li><strong>The engine:</strong> assembling a heavily modified motor that ran well from the first start.</li>
     </ul>
     <figure>
-      <div class="plate plate--historic"><span class="plate__type">Working step</span>Fabrication in progress, or the engine on the bench</div>
+      <div class="plate plate--historic plate--photo"><span class="plate__type">Working step</span><img src="photos/w12-shell-primer-front.jpg" alt="The rebuilt shell in primer, front end, on stands"></div>
+      <figcaption>The shell in primer. From the waist down, most of this metal is new, and much of it was made here.</figcaption>
     </figure>
+  </section>
+
+  <!-- ============ 17b. PROVENANCE ============ -->
+  <section class="section">
+    <div class="section__head">
+      <p class="eyebrow">16 &middot; Provenance</p>
+      <h2 class="section__title">Where it came from</h2>
+      <p class="section__standfirst">An American life, a crossing, and a file of paper that still matches the car.</p>
+    </div>
+    <div class="prose">
+      <p>This was a New York car. Its early paperwork records it registered in New York State and sold on within the state in 1972, and it later passed to a specialist dealer in Los Angeles: the dealer's sticker was still in the corner of the windscreen when the screen came out, and it is photographed earlier in this dossier.</p>
+      <p>It crossed to England in the summer of 2018, shipped in a container out of Los Angeles and landed at Felixstowe, with the original American title and bill of sale travelling with it. HM Revenue &amp; Customs confirmed in July 2018 that the import had been properly declared and the duty and VAT accounted for, clearing the way for a British registration. It came to the workshop the following year as a project, and it is now registered in the United Kingdom with a V5C in its own chassis number.</p>
+      <p>The numbers agree with each other, which is the part that matters. The chassis number is stamped on the car; the Karmann body plate carries the same number; and the file follows the same car from New York to the English workshop where it was rebuilt, without a gap. It is in the United Kingdom still.</p>
+    </div>
+
+    <table class="spec-table spec-table--wide">
+      <caption>The paper trail</caption>
+      <tbody>
+        <tr><th>Earliest record</th><td>Registered in New York State; transferred within New York, January 1972</td></tr>
+        <tr><th>Later</th><td>With a Los Angeles classic dealer, whose sticker remained on the original windscreen</td></tr>
+        <tr><th>Export</th><td>Containerised at Los Angeles, discharged at Felixstowe, June 2018</td></tr>
+        <tr><th>Title</th><td>Original American title and bill of sale supplied with the car</td></tr>
+        <tr><th>Import</th><td>HMRC import notification cleared July 2018; VAT and duty accounted for</td></tr>
+        <tr><th>Registration</th><td>Certificate of conformity obtained; now UK registered, V5C held</td></tr>
+        <tr><th>Into the workshop</th><td>July 2019, as a restoration project</td></tr>
+        <tr><th>Where built</th><td>England, over seven years</td></tr>
+        <tr><th>Where now</th><td>United Kingdom</td></tr>
+        <tr><th>Identity</th><td>Chassis, body plate and documents all read 452&nbsp;279</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <h4>What comes with the car</h4>
+      <p>The history file, the American title and transfer papers, the shipping and customs paperwork, the certificate of conformity, the V5C, the original Karmann body plate, and the photographic record of the restoration from the first day of stripping to the last panel.</p>
+    </div>
   </section>
 
   <!-- ============ 18. FULL SPEC ============ -->
   <section class="section">
     <div class="section__head">
-      <p class="eyebrow">16 &middot; Reference</p>
+      <p class="eyebrow">17 &middot; Reference</p>
       <h2 class="section__title">Full specification</h2>
       <p class="section__standfirst">Everything above, gathered in one place.</p>
     </div>
@@ -842,12 +985,19 @@
       <tbody>
         <tr><th>Marque and model</th><td>Porsche 912</td></tr>
         <tr><th>Year</th><td>1965</td></tr>
-        <tr><th>Chassis number</th><td><span class="tbc">to confirm</span></td></tr>
-        <tr><th>Engine number</th><td><span class="tbc">to confirm</span></td></tr>
-        <tr><th>In the workshop since</th><td><span class="tbc">to confirm</span></td></tr>
-        <tr><th>Status</th><td>Restoration ongoing, completion expected 2026</td></tr>
+        <tr><th>Chassis number</th><td>452 279</td></tr>
+        <tr><th>Body number</th><td>Karmann 452 279 (matching)</td></tr>
+        <tr><th>Engine number</th><td>746389</td></tr>
+        <tr><th>Registration</th><td>UK registered, V5C held</td></tr>
+        <tr><th>Built</th><td>England, in the workshop since July 2019</td></tr>
+        <tr><th>Status</th><td>Restoration complete, 2026</td></tr>
       </tbody>
     </table>
+
+    <div class="provenance">
+      <div class="plate plate--historic plate--photo"><span class="plate__type">Provenance</span><img src="photos/w13-vin-plate.jpg" alt="Chassis number 452 279 stamped on the car"></div>
+      <p>Chassis number <strong>452&nbsp;279</strong>, as stamped on the car. The file that comes with it includes the American title and transfer papers, the shipping and customs paperwork for its move to the UK, and the certificate of conformity ordered for registration here.</p>
+    </div>
 
     <table class="spec-table spec-table--wide">
       <caption>Engine and drivetrain</caption>
@@ -880,9 +1030,9 @@
     <table class="spec-table spec-table--wide">
       <caption>Chassis, suspension and brakes</caption>
       <tbody>
-        <tr><th>Body</th><td>Steel shell rebuilt on a jig; carbon-fibre wings, bonnet, bumpers and deck lid; flared rear arches</td></tr>
+        <tr><th>Body</th><td>Steel shell rebuilt on a jig; glassfibre wings, bonnet, bumpers and deck lid, carbon-fibre reinforced; flared rear arches</td></tr>
         <tr><th>Bushes</th><td>Approximately 80 percent polyurethane</td></tr>
-        <tr><th>Dampers</th><td>New, four</td></tr>
+        <tr><th>Dampers</th><td>Koni, new, four</td></tr>
         <tr><th>Torsion bars</th><td>Original</td></tr>
         <tr><th>Trailing arms</th><td>Original (one front lower arm replaced)</td></tr>
         <tr><th>Brakes</th><td>New calipers, pads, discs; new handbrake shoes and cables</td></tr>
@@ -893,20 +1043,40 @@
     <table class="spec-table spec-table--wide">
       <caption>Body, electrics and interior</caption>
       <tbody>
-        <tr><th>Colour</th><td>Porsche factory special-order blue (<span class="tbc">code to confirm</span>)</td></tr>
+        <tr><th>Colour</th><td>Crystal Blue (Glasurit), Porsche factory special-order</td></tr>
         <tr><th>Headlights</th><td>Modified 356 units, clear glass</td></tr>
         <tr><th>Wiring</th><td>New hand-built loom; generator to alternator</td></tr>
         <tr><th>Glass</th><td>New windscreen; original rear, door and quarter glass</td></tr>
         <tr><th>Interior</th><td>Blue leather, orange Alcantara, Scottish tweed; no carpet</td></tr>
         <tr><th>Safety</th><td>Reinforcement bar, four-point harness</td></tr>
         <tr><th>Instruments</th><td>Five gauges (three original plus oil pressure and charging)</td></tr>
+        <tr><th>Unobtainable parts</th><td>Small fittings modelled and 3D-printed in the workshop</td></tr>
       </tbody>
     </table>
   </section>
 
+  <!-- ============ 18b. THE MAKER ============ -->
+  <section class="section">
+    <div class="section__head">
+      <p class="eyebrow">18 &middot; The maker</p>
+      <h2 class="section__title">The man who built it</h2>
+      <p class="section__standfirst">Almost every decision in this document was taken by one person.</p>
+    </div>
+
+    <div class="maker">
+      <div class="plate plate--finished plate--photo"><span class="plate__type">The maker</span><img src="photos/u01-umberto-portrait.jpg" alt="Umberto De Caires, who built 912R" style="object-position:50% 28%"></div>
+      <div>
+        <h4>Umberto De Caires</h4>
+        <p>He grew up in his father's workshop. His father was an aerospace engineer, and the models, engines and mechanisms on that bench were taken apart until they were understood. He trained as a mechanic in Venezuela on a course built around racing, where tolerances matter and shortcuts cost races, then moved into custom motorcycles, and afterwards to Italy for bodywork and paint. Each discipline added a layer: engine, chassis, surface, finish.</p>
+        <p>England came next, and years of independent work on classics: Jaguar above all, but also Porsche, Alfa Romeo, Maserati, Triumph, MG and Aston Martin, for owners who cared about what they drove. 912R was built in that English workshop, over seven years, alongside that work.</p>
+        <p>Last month he left England for Gavorrano, in the Maremma, Italy, where De Caires Classics is opening its own garage. 912R is the car that closes one chapter of that story and opens the next. Everything in the preceding pages is the standard he intends to keep working to.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ 19. CLOSING ============ -->
   <section class="section closing">
-    <p class="eyebrow">17 &middot; For the next owner</p>
+    <p class="eyebrow">19 &middot; For the next owner</p>
     <h2 class="section__title" style="margin-bottom:1.4rem;">A car to be understood</h2>
     <div class="prose" style="margin: 0 auto; text-align: left;">
       <p>What the builder hopes for the car is simple, and worth saying plainly: someone who will take good care of it, who will understand everything that has been done, and who will enjoy it. And, one day, the chance to see it again at a show, in the hands of whoever comes next.</p>
@@ -917,12 +1087,13 @@
       <cite>Umberto</cite>
     </blockquote>
     <figure style="margin-left:auto; margin-right:auto;">
-      <div class="plate plate--finished"><span class="plate__type">Finished &middot; professional</span>The car leaving: rear three-quarter, on the road</div>
+      <div class="plate plate--finished plate--photo"><span class="plate__type">Finished</span><img src="photos/f05-rear-quarter-shed.jpg" alt="912R outside the workshop, rear three-quarter, finished"></div>
+      <figcaption>912R, finished, outside the workshop it spent seven years in.</figcaption>
     </figure>
     <hr class="rule rule--center">
     <p class="colophon">
-      De Caires Classics &middot; Maremma, Tuscany<br>
-      info@decairesclassics.com
+      De Caires Classics &middot; info@decairesclassics.com<br>
+      912R built in England &middot; the workshop now at Gavorrano, Maremma, Italy
     </p>
   </section>
 

@@ -1,0 +1,5 @@
+# Unprocessed source images (WhatsApp exports, AI generations) — working files only
+images/Raw/
+
+# Built PDFs — regenerate from the HTML via the headless Chrome print step
+portfolio/912r/*.pdf

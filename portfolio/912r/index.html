@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" data-page="dossier">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>912R: 1965 Porsche 912 Restoration Dossier | De Caires Classics</title>
+  <meta name="description" content="The build dossier for 912R, a 1965 Porsche 912 restored by De Caires Classics: provenance, philosophy, the work by system, and full specification.">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="assets/css/dossier.css">
+</head>
+<body data-app="dossier">
+
+  <!-- Navigation (shared site chrome; hidden automatically in print mode) -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="../../index.html" class="nav__logo"><img src="../../images/mini-logo.png" alt="">De Caires Classics</a>
+        <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav__links">
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../services.html">Services</a></li>
+          <li><a href="../../portfolio.html" class="active">Portfolio</a></li>
+          <li><a href="../../about.html">About</a></li>
+          <li><a href="../../contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="dossier-toolbar">
+    <a href="?print=1" class="toolbar__web-link">Print / Save as PDF</a>
+    <span class="toolbar__print-hint">Use your browser's Print command, then Save as PDF.</span>
+  </div>
+
+  <!-- Web render target -->
+  <main id="dossier-root" class="dossier" aria-live="polite"></main>
+
+  <!-- Paged.js render target (print mode only) -->
+  <div id="print-root" style="display:none;"></div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__logo">De Caires Classics</span>
+        <ul class="footer__links">
+          <li><a href="../../services.html">Services</a></li>
+          <li><a href="../../portfolio.html">Portfolio</a></li>
+          <li><a href="../../about.html">About</a></li>
+          <li><a href="../../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <p class="footer__copy">De Caires Classics &mdash; Maremma, Tuscany &mdash; <a href="mailto:info@decairesclassics.com" style="color: inherit;">info@decairesclassics.com</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+  <script src="../../js/main.js"></script>
+  <script src="assets/js/dossier.js"></script>
+</body>
+</html>
